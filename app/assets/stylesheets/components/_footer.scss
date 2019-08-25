@@ -1,0 +1,35 @@
+.footer {
+  color: black;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  padding: 5px;
+  text-align: center;
+  size: 10px;
+  margin-top: 10px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+}
+
+
+.fab fa-facebook, .fab fa-twitter, .fab fa-github {
+  size: 30vh;
+}
+
+
+i {
+  font-size: 50px;
+  color: $line;
+}
+
+i:hover {
+  color: #01676b;
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  text-align: center;
+}
+
