@@ -1,8 +1,33 @@
-<% @travels.each do |travel| %>
-<div class="container">
-  <div class="col-6 card-travel">
-    <h2><%= travel.user.first_name %></h2>
-    <p><%= travel.departure_date %></p>
-  </div>
+<div class = "mt-5 mb-5" style="text-align: center">
+  <h2>Find a liner</h2>
 </div>
+<div class="d-flex flex-column align-items-center">
+  <%= form_tag travels_path, class:"text-align-center pagination-center",method: :get do %>
+  <%= text_field_tag :from,
+    params[:from],
+    class: " form-control form-search col-xl-12 col-lg-12 col-md-12 col-sm-12 form-index mb-3",required: false,
+    placeholder: "From"
+  %>
+  <%= text_field_tag :to,
+    params[:to],
+    class: "form-control form-search col-xl-12 col-lg-12 col-md-12 col-sm-12 form-index mb-3",required: false,
+    placeholder: "To"
+  %>
+  <%= submit_tag "Search", class: "btn-flat" %>
 <% end %>
+</div>
+<hr>
+<div class="d-flex flex-column align-items-center" >
+  <% @travels.each do |travel| %>
+  <a href=<%= "travels/#{travel.id}" %> class = "col-xl-6 col-lg-6 col-md-12 col-sm-12 ">
+    <div class="card-product mb-5 col-12">
+      <%= cl_image_tag travel.user.photo, class: "avatar" %>
+      <div class="card-product-infos">
+        <p> From: <%= travel.departure_place %></p>
+        <p> To: <%= travel.arrival_place %></p>
+        <p> Price: <%= travel.price %></p>
+      </div>
+    </div>
+  </a>
+  <% end %>
+</div>

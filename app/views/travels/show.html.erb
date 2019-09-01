@@ -1,4 +1,4 @@
-  <div class="container">
+
    <div class="card-travel-show">
      <div class="card-travel-show-infos">
         <div class="card-travel-show-description">
@@ -12,6 +12,7 @@
          <p><span>Departure date:</span> <%= @travel.departure_date %></p>
          <p><span>Arrival date:</span> <%= @travel.arrival_date %></p>
          <p><span>Arrival hour:</span> <%= @travel.arrival_hour %></p>
+         <p><span>departure place:</span> <%= @travel.departure_place %></p>
          <p><span>Arrival place:</span> <%= @travel.arrival_place %></p>
          <p><span>Pick up place:</span></br> <%= @travel.pick_up_place %></p>
         </div>
@@ -21,4 +22,4 @@
     <div class="d-flex justify-content-center">
       <%= link_to "Back to your travels", travels_path %>
     </div>
-  </div>
+

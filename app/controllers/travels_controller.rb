@@ -2,7 +2,12 @@ class TravelsController < ApplicationController
   before_action :set_travel, only: [:show, :edit, :update, :destroy]
 
   def index
-    @travels = Travel.all
+    if params[:from].present? && params[:to].present?
+      @travels = Travel.where("departure_place ILIKE ?", "%#{params[:from]}%").where("arrival_place ILIKE ?", "%#{params[:to]}%")
+      # raise
+    else
+      @travels = Travel.all
+    end
   end
 
   def show
@@ -45,6 +50,6 @@ class TravelsController < ApplicationController
   end
 
   def travel_params
-    params.require(:travel).permit(:departure_date, :arrival_date, :arrival_place, :arrival_hour, :pick_up_place, :price)
+    params.require(:travel).permit(:departure_date, :arrival_date, :arrival_place, :departure_place, :arrival_hour, :pick_up_place, :price)
   end
 end
