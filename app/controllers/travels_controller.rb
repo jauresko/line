@@ -23,7 +23,6 @@ class TravelsController < ApplicationController
     end
   end
 
-
   def edit
   end
 
@@ -42,11 +41,10 @@ class TravelsController < ApplicationController
   private
 
   def set_travel
-    @travel = travel.find(params[:id])
+    @travel = Travel.find(params[:id])
   end
 
   def travel_params
-    params.require(:travel).permit(:first_name, :last_name, :photo, :address, :nationality, :telephone, :whatsapp_number)
+    params.require(:travel).permit(:departure_date, :arrival_date, :arrival_place, :arrival_hour, :pick_up_place, :price)
   end
-
 end

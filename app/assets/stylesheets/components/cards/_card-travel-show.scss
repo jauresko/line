@@ -1,0 +1,48 @@
+.card-travel-show {
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.card-travel-show-attributes span{
+  color: #232b2b;
+  font-weight: 700;
+}
+.card-travel-show-attributes i {
+  font-size: 1rem;
+  margin: 0 0.5rem;
+}
+.card-travel-show-infos {
+  margin: 1rem;
+  padding: 1rem;
+}
+.card-travel-show-infos span {
+  color:$line;
+}
+.card-travel-show  {
+  p{
+    font-size: 1.1rem;
+  }
+  img {
+    object-fit: cover;
+    width: 40vw;
+    height: 100%;
+  }
+}
+.text-center {
+  text-align: center;
+}
+.card-travel-show-description span {
+  color:$line;
+}
+.btn-book {
+  margin-top: 1rem;
+}
+.book-travel {
+  display: flex;
+  h2 {
+    margin-bottom: 1rem;
+  }
+}

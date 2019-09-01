@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_24_225459) do
+ActiveRecord::Schema.define(version: 2019_08_31_150117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,28 @@ ActiveRecord::Schema.define(version: 2019_08_24_225459) do
     t.string "meeting_place"
     t.date "date"
     t.string "drop_place"
-    t.string "total_price"
+    t.integer "total_price"
     t.bigint "user_id"
     t.bigint "travel_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "purchase_id"
+    t.index ["purchase_id"], name: "index_bookings_on_purchase_id"
     t.index ["travel_id"], name: "index_bookings_on_travel_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.string "product_url"
+    t.string "name"
+    t.string "photo"
+    t.string "purchase_place"
+    t.string "seller"
+    t.integer "price"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "travels", force: :cascade do |t|
@@ -36,6 +51,8 @@ ActiveRecord::Schema.define(version: 2019_08_24_225459) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
+    t.string "pick_up_place"
     t.index ["user_id"], name: "index_travels_on_user_id"
   end
 
@@ -58,7 +75,9 @@ ActiveRecord::Schema.define(version: 2019_08_24_225459) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "purchases"
   add_foreign_key "bookings", "travels"
   add_foreign_key "bookings", "users"
+  add_foreign_key "purchases", "users"
   add_foreign_key "travels", "users"
 end

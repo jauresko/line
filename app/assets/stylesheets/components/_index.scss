@@ -5,5 +5,9 @@
 @import "banner";
 @import "bottom";
 @import "searchbar";
-@import "card";
+@import "cards";
 @import "footer";
+
+.body {
+  height: 100vh;
+}

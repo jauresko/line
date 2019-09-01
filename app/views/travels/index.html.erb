@@ -1,2 +1,8 @@
-<h1>Travels#index</h1>
-<p>Find me in app/views/travels/index.html.erb</p>
+<% @travels.each do |travel| %>
+<div class="container">
+  <div class="col-6 card-travel">
+    <h2><%= travel.user.first_name %></h2>
+    <p><%= travel.departure_date %></p>
+  </div>
+</div>
+<% end %>

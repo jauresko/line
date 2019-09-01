@@ -1,0 +1,24 @@
+  <div class="container">
+   <div class="card-travel-show">
+     <div class="card-travel-show-infos">
+        <div class="card-travel-show-description">
+          <div class="book-travel">
+            <h2>Summary</h2>
+          </div>
+            <p><%= current_user.first_name %> <%= current_user.last_name %></p>
+          <p><strong><span>price:</span> <%= @travel.price %>€</strong></p>
+        </div>
+        <div class="card-travel-show-attributes">
+         <p><span>Departure date:</span> <%= @travel.departure_date %></p>
+         <p><span>Arrival date:</span> <%= @travel.arrival_date %></p>
+         <p><span>Arrival hour:</span> <%= @travel.arrival_hour %></p>
+         <p><span>Arrival place:</span> <%= @travel.arrival_place %></p>
+         <p><span>Pick up place:</span></br> <%= @travel.pick_up_place %></p>
+        </div>
+        <%= link_to "Ask this liner", new_travel_booking_path(params["id"]), class:'btn-flat' unless current_user.travels.include?(@travel) %>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= link_to "Back to your travels", travels_path %>
+    </div>
+  </div>

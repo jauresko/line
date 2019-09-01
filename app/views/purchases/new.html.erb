@@ -1,0 +1,17 @@
+<h1 class="text-center">Make an order with us</h1>
+<div class="d-flex justify-content-center ">
+    <%= simple_form_for [@purchase] do |f| %>
+    <hr>
+      <div>
+        <div class="form-group align-content-center pagination-center" style = "text-align: center">
+          <%= f.input :product_url%>
+          <%= f.input :name%>
+          <%= f.input :seller %>
+          <%= f.input :purchase_place %>
+          <%= f.input :price %>
+          <%= f.input :photo %>
+          <%= f.button :submit, "Order", class: "btn-flat" %>
+        </div>
+      </div>
+    <% end %>
+</div>

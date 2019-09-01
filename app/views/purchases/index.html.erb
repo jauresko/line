@@ -1,0 +1,10 @@
+<%= @purchases.each do |purchase| %>
+<div class="card-product">
+  <%= cl_image_tag purchase.photo %>
+  <div class="card-product-infos">
+    <h2><%= purchase.name %></h2>
+    <p><%= purchase.price %></p>
+    <p><%= purchase.purchase_place %></p>
+  </div>
+</div>
+<% end %>
