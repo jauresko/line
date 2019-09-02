@@ -7,3 +7,34 @@
   text-align: center
 }
 
+.sign {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)),image-url('sign_up_picture.jpg');
+  color: #ebeaeb;
+  min-height: 100vh;
+  padding: 56px;
+  margin-top: -16px;
+}
+
+.signup-pres {
+  max-width: 40vw;
+  margin-right: 48px;
+  color: white;
+  font-size: 30px
+}
+
+.signup-pres strong {
+ color: $line
+}
+
+.form {
+  background-color: white;
+  color: black;
+  padding: 16px;
+  border-radius: 3px;
+  width: 30vw;
+  min-width: 250px;
+}
+
+.form-inputs {
+  text-align: center
+}

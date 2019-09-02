@@ -17,6 +17,7 @@
 .card-travel-show-infos {
   margin: 1rem;
   padding: 1rem;
+  width: 100%;
 }
 .card-travel-show-infos span {
   color:$line;
@@ -27,8 +28,7 @@
   }
   img {
     object-fit: cover;
-    width: 40vw;
-    height: 100%;
+    width: 7vw;
   }
 }
 .text-center {

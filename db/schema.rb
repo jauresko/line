@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_09_01_042202) do
     t.datetime "updated_at", null: false
     t.integer "price"
     t.string "pick_up_place"
+    t.text "details"
     t.string "departure_place"
     t.integer "weight_left"
     t.index ["user_id"], name: "index_travels_on_user_id"
