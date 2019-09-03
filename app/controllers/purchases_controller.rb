@@ -2,7 +2,12 @@ class PurchasesController < ApplicationController
   before_action :set_purchase, only: [:show, :edit, :update, :destroy]
 
   def index
-    @purchases = Purchase.all
+    if params[:from].present? && params[:to].present?
+      @purachases = Purchase.where("purchase_place ILIKE ?", "%#{params[:from]}%").where("delivery_place ILIKE ?", "%#{params[:to]}%")
+      # raise
+    else
+      @purchases = Purchase.all
+    end
   end
 
   def show
@@ -45,6 +50,6 @@ class PurchasesController < ApplicationController
   end
 
   def purchase_params
-    params.require(:purchase).permit(:product_url, :name, :photo, :purchase_place, :seller, :price)
+    params.require(:purchase).permit(:product_url, :name, :photo, :purchase_place, :seller, :price, :bonus_traveler)
   end
 end

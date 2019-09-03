@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-center">
+   <div class="card-travel-show col-xl-10 col-lg-10 col-md-12 col-sm-12 d-flex justify-content-center text-align-center">
+     <div class="card-travel-show-infos">
+        <div class="card-travel-show-description">
+            <h2>Congratulation your just connect with a liner</h2>
+              <p><%= @booking.travel.user.first_name %> <%= @booking.travel.user.last_name %></p>
+              <%= image_tag "success.svg", class: "m-3"%>
+            <h3><%= @booking.date.strftime("%d %B %Y") %></h3>
+            <hr style="margin: 0">
+        </div>
+        <div class="d-inline">
+           <p><span></span> Meeting place: <%= @booking.meeting_place %></p>
+           <i class="fas fa-arrow-down"></i>
+           <p class="mt-2"><span></span> Drop place: <%= @booking.drop_place %></p>
+        </div>
+        <hr style="margin: 0">
+          <div>
+            <p>Complementary information</p>
+            <p><%= @booking.travel.details %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

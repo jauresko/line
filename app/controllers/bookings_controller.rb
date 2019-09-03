@@ -6,60 +6,56 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @warrior = Warrior.find(params[:warrior_id])
+    if params[:travel_id]
+      @travel = Travel.find(params[:travel_id])
+    else
+      @purchase = Purchase.find(params[:purchase_id])
+    end
     @booking = Booking.new
-    authorize(@warrior)
   end
 
   def create
     @user = current_user
-    @warrior = Warrior.find(params[:warrior_id])
+    @travel = Travel.find(params[:travel_id])
     @booking = Booking.new(booking_params)
+    @booking.total_price = @travel.price
+    @booking.date = @travel.arrival_date
     @booking.user_id = @user.id
-    @booking.warrior_id = @warrior.id
-    price_calculator
+    @booking.travel_id = @travel.id
     if @booking.save
-      redirect_to warrior_booking_path(@warrior, @booking)
+      redirect_to travel_booking_path(@travel, @booking)
     else
       render :new
     end
-    authorize(@warrior)
   end
 
   def show
     @booking = Booking.find(params[:id])
-    price_calculator
-    authorize(@booking)
   end
 
   def destroy
     @booking = current_user.bookings.find(params[:id])
     @booking.destroy
     redirect_to warriors_path
-    authorize(@booking)
   end
 
   def display_resa
     @bookings = current_user.bookings
-    authorize(@bookings)
   end
 
   def display_bookings
     @warriors = current_user.warriors
-    authorize(@warriors)
   end
 
   def edit
     @booking = current_user.bookings.find(params[:id])
     @warrior = Warrior.find(@booking.warrior_id)
-    authorize(@booking)
   end
 
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     redirect_to warrior_booking_path(@booking)
-    authorize(@booking)
   end
 
   def accept
@@ -67,13 +63,12 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.find(params[:id])
     @warrior = Warrior.find(@booking.warrior_id)
     redirect_to warriors_path
-    authorize(@booking)
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:place, :start_date, :end_date, :total_price, :status)
+    params.require(:booking).permit(:meeting_place, :date, :drop_place, :total_price, :recipient)
   end
 
   def price_calculator

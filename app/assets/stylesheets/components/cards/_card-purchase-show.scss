@@ -1,0 +1,48 @@
+.card-purchase-show {
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.card-purchase-show-attributes span{
+  color: #232b2b;
+  font-weight: 700;
+}
+.card-purchase-show-attributes i {
+  font-size: 1rem;
+  margin: 0 0.5rem;
+}
+.card-purchase-show-infos {
+  margin: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+.card-purchase-show-infos span {
+  color:$line;
+}
+.card-purchase-show  {
+  p{
+    font-size: 1.1rem;
+  }
+  img {
+    object-fit: cover;
+    width: 7vw;
+  }
+}
+.text-center {
+  text-align: center;
+}
+.card-purchase-show-description span {
+  color:$line;
+}
+.btn-book {
+  margin-top: 1rem;
+}
+.book-purchase {
+  display: flex;
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
