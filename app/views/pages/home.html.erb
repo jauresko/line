@@ -5,12 +5,12 @@
       <p>Connect with your family by joining our community</p>
       <p>Order or send everywhere and monetize your travel</p>
       <div class ="d-flex justify-content-center">
-      <%= link_to "Order now", new_travel_path, class: "btn btn-flat" %>
+      <%= link_to "Fly with us", purchases_path, class: "btn btn-flat-2 m-3" %>  <%= link_to "Send now", travels_path, class: "btn btn-flat m-3" %>
       </div>
     </div>
   </div>
 
-    <div class="text-center pagination-center mb-3">
+    <div class="container text-center pagination-center mb-3">
       <h2><strong>How it works</strong></h2>
       <a class="border-bottom border-primary mr-5" id="sender-display"><strong>Send</strong></a>
       <a class="border-bottom border-primary ml-5" id="buy-display"><strong>Buy</strong></a>
@@ -82,7 +82,7 @@
         <div class="card-product mb-3 mr-1 ">
           <%=image_tag('loupe.svg')%>
           <div class="card-product-infos">
-            <h2>As a buyer</h2>
+            <h2 class="color-line-2">As a buyer</h2>
             <p>1 - Make an order</p>
           </div>
         </div>
@@ -91,7 +91,7 @@
         <div class="card-product mb-3 mr-1">
           <%=image_tag('broadcaster.svg')%>
           <div class="card-product-infos">
-            <h2>As a buyer</h2>
+            <h2 class="color-line-2">As a buyer</h2>
             <p>2 - Ask to the line community to buy it</p>
           </div>
         </div>
@@ -100,7 +100,7 @@
         <div class="card-product mb-3 mr-1">
           <%=image_tag('check.svg')%>
           <div class="card-product-infos">
-            <h2>As a traveler</h2>
+            <h2 class="color-line-2">As a traveler</h2>
             <p>3 - Validate the purchase</p>
           </div>
         </div>
@@ -109,7 +109,7 @@
         <div class="card-product mb-3 mr-1">
           <%=image_tag('buy.svg')%>
           <div class="card-product-infos">
-            <h2>As a traveler</h2>
+            <h2 class="color-line-2">As a traveler</h2>
             <p>4 - Go purchase the product</p>
           </div>
         </div>
@@ -118,7 +118,7 @@
         <div class="card-product mb-3 mr-1">
           <%=image_tag('browser.svg')%>
           <div class="card-product-infos">
-            <h2>As a traveler</h2>
+            <h2 class="color-line-2">As a traveler</h2>
             <p>5 - Travel safely with the package</p>
           </div>
         </div>
@@ -127,7 +127,7 @@
         <div class="card-product mb-3 mr-1">
           <%=image_tag('happy.svg')%>
           <div class="card-product-infos">
-            <h2>As a traveler</h2>
+            <h2 class="color-line-2">As a traveler</h2>
             <p>6 - Bring it the recipient and get your money</p>
           </div>
         </div>

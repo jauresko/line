@@ -21,7 +21,7 @@
   <% @purchases.each do |purchase| %>
 <div class="blog-card">
     <div class="meta">
-      <%= cl_image_tag @purchases.first.photo, height: 300, width: 300, crop: :fill, class:"photo"%>
+      <%= cl_image_tag purchase.photo, height: 300, width: 300, crop: :fill, class:"photo"%>
     </div>
     <div class="description">
       <h2><strong><%= purchase.name %></strong></h2>

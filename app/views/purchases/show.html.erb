@@ -15,7 +15,7 @@
          <p><span>Seller:</span> <%= @purchase.seller %></p>
          <p><span>Country:</span> <%= @purchase.purchase_place %></p>
         </div>
-        <%= link_to "Ask this liners", new_purchase_booking_path(params["id"]), class:'btn btn-primary btn-book' unless current_user.purchases.include?(@purchase) %>
+        <%= link_to "Ask this liners", new_purchase_order_path(params["id"]), class:'btn btn-primary btn-book' unless current_user.purchases.include?(@purchase) %>
       </div>
     </div>
     <div class="d-flex justify-content-center">

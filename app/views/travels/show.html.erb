@@ -32,7 +32,6 @@
         </div>
         <%= link_to "Ask this liner", new_travel_booking_path(params["id"]), class:'btn-flat' unless current_user.travels.include?(@travel) %>
         <%= link_to "Back to your travels", travels_path %>
-        <%= link_to "Book this flight", new_travel_booking_path(@travel) %>
       </div>
     </div>
 </div>
