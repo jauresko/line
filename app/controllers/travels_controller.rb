@@ -43,6 +43,10 @@ class TravelsController < ApplicationController
     redirect_to travels_path
   end
 
+  def mytravel
+    @travels = current_user.travels
+  end
+
   private
 
   def set_travel

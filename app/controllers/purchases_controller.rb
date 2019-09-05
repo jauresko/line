@@ -22,7 +22,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
     @purchase.user = @user
     if @purchase.save
-      redirect_to purchase_path(@purchase)
+      redirect_to mypurchase_path(@purchase)
     else
       render :new
     end
@@ -41,6 +41,10 @@ class PurchasesController < ApplicationController
     @purchase.destroy
 
     redirect_to purchases_path
+  end
+
+  def mypurchase
+    @purchases = current_user.purchases
   end
 
   private

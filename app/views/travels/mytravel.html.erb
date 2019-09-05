@@ -1,0 +1,20 @@
+<h2 class="text-center">My travels proposition</h2>
+<hr>
+<% @travels.each do |travel| %>
+<div class="notification mt-5 mb-5">
+  <%= cl_image_tag current_user.photo %>
+  <div class="notification-content">
+    <p><%= travel.departure_date.strftime("%d %B %Y")%>   <i class="fas fa-arrow-right m-3"></i>   <%= travel.arrival_date.strftime("%d %B %Y") %></p>
+    <p>Departure from <strong><%= travel.departure_place %></strong> to <strong><%= travel.arrival_place %></strong> at <strong><%= travel.arrival_hour %></strong>for <strong><%= travel.price %>€</strong>.</p>
+    <p>Only <strong><%= travel.weight_left %> kilos left</strong></p>
+    <p>Pick up the package at <strong><%= travel.pick_up_place %></strong></p>
+  </div>
+
+  <div class="notification-actions">
+    <a href=<%= "/travels/#{travel.id}/edit" %>>Edit <i class="fas fa-pencil-alt"></i></a>
+    <%= link_to travel_path(travel), method: :delete do%>Delete
+    <i class="far fa-trash-alt"></i></a>
+    <% end %>
+  </div>
+</div>
+<% end %>
