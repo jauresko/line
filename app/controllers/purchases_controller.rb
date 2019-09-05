@@ -1,5 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :set_purchase, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: :new
 
   def index
     if params[:from].present? && params[:to].present?
@@ -33,8 +35,11 @@ class PurchasesController < ApplicationController
 
   def update
     @purchase.update(purchase_params)
-
-    redirect_to purchase_path(@purchase)
+    if @purchase.status == "Delivered"
+      @purchase.order.status = "Done"
+      @purchase.order.save
+    end
+    redirect_to mypurchase_path
   end
 
   def destroy
@@ -54,6 +59,6 @@ class PurchasesController < ApplicationController
   end
 
   def purchase_params
-    params.require(:purchase).permit(:product_url, :name, :photo, :purchase_place, :seller, :price, :bonus_traveler, :delivery_place)
+    params.require(:purchase).permit(:product_url, :name, :photo, :purchase_place, :seller, :price, :bonus_traveler, :delivery_place, :status)
   end
 end

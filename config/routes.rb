@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   get 'myprofile/mypurchase', to: 'purchases#mypurchase', as: 'mypurchase'
   get 'myprofile/mytravel', to: 'travels#mytravel', as: 'mytravel'
-  get 'myprofile/order', to: 'order#display_resa', as: 'myorder'
-  get 'myprofile/booking', to: 'booking#display_resa', as: 'mybooking'
+  get 'myprofile/order', to: 'orders#display_resa', as: 'myorder'
+  get 'myprofile/booking', to: 'bookings#display_resa', as: 'mybooking'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

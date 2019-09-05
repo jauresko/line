@@ -1,0 +1,32 @@
+<h2 class="text-center">My bookings</h2>
+<hr>
+<div class="container col-xl-10 col-lg-10 col-sm-10 col-xs-12 col-12 text-center">
+  <% @bookings.each do |booking| %>
+  <div class="notification mt-5 mb-5">
+    <div class="meta">
+      <% if booking.travel.user.photo.file == nil%>
+        <%= image_tag "user.png", height: 100, width: 100, crop: :fill, class:"photo"  %>
+      <% else %>
+        <%= cl_image_tag booking.travel.user.photo, height: 100, width: 100, crop: :fill, class:"photo" %>
+      <% end %>
+    </div>
+    <div class="notification-content">
+    <p><%= booking.travel.departure_date.strftime("%d %B %Y")%>   <i class="fas fa-arrow-right m-3"></i>   <%= booking.travel.arrival_date.strftime("%d %B %Y") %></p>
+    <p>Departure from <strong><%= booking.travel.departure_place %></strong> to <strong><%= booking.travel.arrival_place %></strong> at <strong><%= booking.travel.arrival_hour %></strong>.</p>
+    <p>Only <strong><%= booking.travel.weight_left %> kilos left</strong></p>
+    <p>Pick up the package at <strong><%= booking.travel.pick_up_place %></strong></p>
+    <p><strong><%= booking.meeting_place %></strong></p>
+    <p>Paid <strong><%= booking.total_price %>€</strong></p>
+    <p><strong><%= booking.status %></strong></p>
+  </div>
+
+    <div class="notification-actions d-flex flex-column">
+      <% if booking.status != "Delivered" %>
+        <%= link_to travel_booking_path(booking.travel, booking, class:"mb-2",booking: { status: "Delivered"}), method: :patch, data: { confirm: "Are you sure?" } do %>Deliver
+          <i class="fas fa-check"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>

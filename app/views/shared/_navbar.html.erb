@@ -55,8 +55,11 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to 'Monetize your travel', new_travel_path, class: "nav-link" %>
+        <li class="nav-item ml-2 mb-2 text-center">
+          <%= link_to 'Oder with us', new_purchase_path, class: "nav-link btn-flat text-white col-xs-6" %>
+        </li>
+        <li class="nav-item ml-2 mb-2 text-center">
+          <%= link_to 'Monetize your travel', new_travel_path, class: "nav-link  btn-flat-2 text-white col-xs-6" %>
         </li>
         <li class="nav-item">
           <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_165434) do
+ActiveRecord::Schema.define(version: 2019_09_05_110319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_165434) do
     t.datetime "updated_at", null: false
     t.string "delivery_place"
     t.integer "bonus_traveler"
+    t.string "status", default: "Pending"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 

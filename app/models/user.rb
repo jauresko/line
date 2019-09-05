@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :travels
   has_many :bookings
   has_many :purchases
+  has_many :orders
 end

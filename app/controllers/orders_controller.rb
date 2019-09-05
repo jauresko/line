@@ -38,9 +38,6 @@ class OrdersController < ApplicationController
     @orders = current_user.orders
   end
 
-  def display_orders
-    @warriors = current_user.warriors
-  end
 
   def edit
     @order = current_user.orders.find(params[:id])
@@ -63,7 +60,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:date, :drop_place, :total_price)
+    params.require(:order).permit(:date, :drop_place, :total_price, :status)
   end
 
   def price_calculator

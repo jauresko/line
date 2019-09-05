@@ -55,7 +55,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to warrior_booking_path(@booking)
+    redirect_to mybooking_path(@booking)
   end
 
   def accept
@@ -68,7 +68,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:meeting_place, :date, :drop_place, :total_price, :recipient)
+    params.require(:booking).permit(:meeting_place, :date, :drop_place, :total_price, :recipient, :status)
   end
 
   def price_calculator

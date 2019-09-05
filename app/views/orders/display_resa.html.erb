@@ -1,0 +1,28 @@
+<h2 class="text-center">My orders</h2>
+<hr>
+<div class="container col-xl-10 col-lg-10 col-sm-10 col-xs-12 col-12 text-center">
+  <% @orders.each do |order| %>
+  <div class="notification mt-5 mb-5">
+    <div class="meta">
+      <%= cl_image_tag order.purchase.photo, height: 100, width: 100, crop: :fill, class:"photo" %>
+    </div>
+    <div class="notification-content">
+      <p><%= order.purchase.name %></p>
+      <p><%= order.purchase.seller %></p>
+      <p><%= order.purchase.price %></p>
+      <p>To deliver to <strong><%= order.purchase.delivery_place %></strong> from <strong><%= order.purchase.purchase_place %></strong> with <strong><%= order.purchase.bonus_traveler %>€ of traveler bonus</strong>.</p>
+      <p><strong><%= order.total_price %>€</strong> paid</p>
+      <p>To deliver at <strong><%= order.drop_place %></strong></p>
+      <p><strong><%= order.status %></strong></p>
+    </div>
+
+    <div class="notification-actions d-flex flex-column">
+      <% if order.purchase.status != "Delivered" %>
+        <%= link_to purchase_order_path(order.purchase, order,  order: { status: "Cancelled"}), method: :patch, data: { confirm: "Are you sure?" } do %>Cancel
+          <i class="fas fa-times"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
