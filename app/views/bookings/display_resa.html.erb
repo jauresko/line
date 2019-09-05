@@ -25,6 +25,10 @@
         <%= link_to travel_booking_path(booking.travel, booking, class:"mb-2",booking: { status: "Delivered"}), method: :patch, data: { confirm: "Are you sure?" } do %>Deliver
           <i class="fas fa-check"></i>
         <% end %>
+      <% else %>
+        <%= link_to new_travel_booking_review_path(booking.travel, booking) do %>Leave a comment
+          <i class="fas fa-comment"></i>
+        <% end %>
       <% end %>
     </div>
   </div>

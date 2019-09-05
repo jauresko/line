@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_110319) do
+ActiveRecord::Schema.define(version: 2019_09_05_201138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2019_09_05_110319) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "recipient"
+    t.bigint "review_id"
+    t.index ["review_id"], name: "index_bookings_on_review_id"
     t.index ["travel_id"], name: "index_bookings_on_travel_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -39,7 +41,9 @@ ActiveRecord::Schema.define(version: 2019_09_05_110319) do
     t.bigint "purchase_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "review_order_id"
     t.index ["purchase_id"], name: "index_orders_on_purchase_id"
+    t.index ["review_order_id"], name: "index_orders_on_review_order_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -57,6 +61,20 @@ ActiveRecord::Schema.define(version: 2019_09_05_110319) do
     t.integer "bonus_traveler"
     t.string "status", default: "Pending"
     t.index ["user_id"], name: "index_purchases_on_user_id"
+  end
+
+  create_table "review_orders", force: :cascade do |t|
+    t.integer "rating"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "travels", force: :cascade do |t|
@@ -94,9 +112,11 @@ ActiveRecord::Schema.define(version: 2019_09_05_110319) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "reviews"
   add_foreign_key "bookings", "travels"
   add_foreign_key "bookings", "users"
   add_foreign_key "orders", "purchases"
+  add_foreign_key "orders", "review_orders"
   add_foreign_key "orders", "users"
   add_foreign_key "purchases", "users"
   add_foreign_key "travels", "users"

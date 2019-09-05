@@ -1,0 +1,16 @@
+<h1 class="text-center mt-1">How was it ?</h1>
+<div class="d-flex justify-content-center ">
+    <%= simple_form_for([@purchase, @review_order], url: purchase_order_review_orders_path(@purchase, @order), method: :post) do |f| %>
+    <%= f.error_notification %>
+    <hr>
+      <div>
+        <div class="form-group align-content-center pagination-center" style = "text-align: center">
+          <%= f.collection_radio_buttons :rating, [[1], [2], [3], [4], [5]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
+              <%= b.radio_button + b.label {image_tag("rating-#{b.text}.png")} %>
+          <% end %>
+          <%= f.input :content, label: "Comment", hint: "200 characters max." %>
+          <%= f.button :submit, "Send review", class:"btn-flat" %>
+        </div>
+      </div>
+    <% end %>
+</div>

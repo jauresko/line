@@ -2,11 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :travels do
-    resources :bookings
+    resources :bookings do
+      resources :reviews, only: [:new, :create, :edit, :update]
+    end
   end
 
   resources :purchases do
-    resources :orders
+    resources :orders do
+      resources :review_orders, only: [:new, :create, :edit, :update]
+    end
   end
 
   get 'myprofile/mypurchase', to: 'purchases#mypurchase', as: 'mypurchase'

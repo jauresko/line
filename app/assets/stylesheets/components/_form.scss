@@ -15,6 +15,8 @@
   min-height: 100vh;
   padding: 56px;
   margin-top: -16px;
+  display: flex;
+  justify-content: center;
 }
 
 .signup-pres {
@@ -29,6 +31,16 @@
 }
 
 .form {
+  background-color: white;
+  color: black;
+  padding: 16px;
+  border-radius: 3px;
+  width: 30vw;
+  min-width: 250px;
+  max-height: 50vh
+}
+
+.form-1 {
   background-color: white;
   color: black;
   padding: 16px;

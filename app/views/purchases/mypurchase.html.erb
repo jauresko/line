@@ -11,7 +11,8 @@
   </div>
 
   <div class="notification-actions d-flex flex-column">
-    <% if purchase.order.status != "Cancelled" %>
+    <% if purchase.order.nil? %>
+    <% elsif purchase.order.status != "Cancelled" %>
       <%= link_to purchase_path(purchase, class:"mb-2",purchase: { status: "Delivered"}), method: :patch, data: { confirm: "Are you sure?" } do %>Deliver
         <i class="fas fa-check"></i>
       <% end %>

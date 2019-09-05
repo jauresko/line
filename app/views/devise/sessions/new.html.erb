@@ -1,11 +1,5 @@
-<div class="sign">
-  <div class="d-flex justify-content-center mt-4">
-    <div class="signup-pres">
-      <p><strong>Travel</strong> with us.</p>
-      <p><strong>Purchase</strong> with us.</p>
-      <p><strong>Send</strong> your package with us.</p>
-    </div>
-    <div class="form">
+<div class="sign text-center">
+    <div class="form text-center">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
