@@ -1,10 +1,11 @@
 class ChatRoomsController < ApplicationController
   def show
-    if params[:travel_id].present?
-      @travel = Travel.find(params[:travel_id])
-      @chat_room = ChatRoom.includes(messages: :user).find(@quest.chat_room.id)
+    if params[:booking_id].present?
+      @booking = Booking.find(params[:booking_id])
+      @chat_room = ChatRoom.includes(messages: :user).find(@booking.chat_room.id)
     else
-      @purchase = Purchase.find(params[:purchase_id])
+      @order = Order.find(params[:order_id])
+      @chat_room = ChatRoom.includes(messages: :user).find(@order.chat_room.id)
     end
   end
 end

@@ -18,7 +18,6 @@ class BookingsController < ApplicationController
     @booking.date = @travel.arrival_date
     @booking.user_id = @user.id
     @booking.travel_id = @travel.id
-    raise
     if @booking.save
       @chat_room = ChatRoom.create(booking_id: @booking.id)
       @chat_room.save

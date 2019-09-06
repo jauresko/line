@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :travel
-  belongs_to :review
+  has_one :chat_room
 end
