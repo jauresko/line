@@ -6,11 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def new
-    if params[:travel_id]
-      @travel = Travel.find(params[:travel_id])
-    else
-      @purchase = Purchase.find(params[:purchase_id])
-    end
+    @travel = Travel.find(params[:travel_id])
     @booking = Booking.new
   end
 
@@ -22,7 +18,10 @@ class BookingsController < ApplicationController
     @booking.date = @travel.arrival_date
     @booking.user_id = @user.id
     @booking.travel_id = @travel.id
+    raise
     if @booking.save
+      @chat_room = ChatRoom.create(booking_id: @booking.id)
+      @chat_room.save
       redirect_to travel_booking_path(@travel, @booking)
     else
       render :new
@@ -43,10 +42,6 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
   end
 
-  def display_bookings
-    @warriors = current_user.warriors
-  end
-
   def edit
     @booking = current_user.bookings.find(params[:id])
     @warrior = Warrior.find(@booking.warrior_id)
@@ -58,25 +53,11 @@ class BookingsController < ApplicationController
     redirect_to mybooking_path(@booking)
   end
 
-  def accept
-    raise
-    @booking = current_user.bookings.find(params[:id])
-    @warrior = Warrior.find(@booking.warrior_id)
-    redirect_to warriors_path
-  end
 
   private
 
   def booking_params
     params.require(:booking).permit(:meeting_place, :date, :drop_place, :total_price, :recipient, :status)
-  end
-
-  def price_calculator
-    @warrior = Warrior.find(params[:warrior_id])
-    @price = @warrior.price
-    @days = (@booking.end_date - @booking.start_date).to_i + 1
-    @total_price = @price * @days
-    @booking.total_price = @total_price
   end
 
 end

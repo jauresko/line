@@ -18,6 +18,8 @@ class OrdersController < ApplicationController
     @order.user_id = @user.id
     @order.purchase_id = @purchase.id
     if @order.save
+      @chat_room = ChatRoom.create(order_id: @order.id)
+      @chat_room.save
       redirect_to purchase_order_path(@purchase, @order)
     else
       render :new
@@ -37,7 +39,6 @@ class OrdersController < ApplicationController
   def display_resa
     @orders = current_user.orders
   end
-
 
   def edit
     @order = current_user.orders.find(params[:id])
