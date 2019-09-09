@@ -2,6 +2,7 @@ class TravelsController < ApplicationController
   before_action :set_travel, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :index
   skip_before_action :authenticate_user!, only: :new
+  layout 'chat_rooms'
 
   def index
     if params[:from].present? && params[:to].present?
