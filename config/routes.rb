@@ -3,12 +3,18 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :travels do
     resources :bookings do
+      resources :chat_rooms, only: [:show] do
+        resources :messages, only: [:create]
+      end
       resources :reviews, only: [:new, :create, :edit, :update]
     end
   end
 
   resources :purchases do
     resources :orders do
+      resources :chat_rooms, only: [:show] do
+        resources :messages, only: [:create]
+      end
       resources :review_orders, only: [:new, :create, :edit, :update]
     end
   end

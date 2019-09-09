@@ -11,10 +11,6 @@
             <%= f.error_notification %>
 
             <div class="form-inputs">
-              <div class="d-inline">
-                <%= f.input :photo, label: 'upload your profil picture' %>
-                <i class="fas fa-plus"></i>
-              </div>
               <%= f.input :first_name %>
               <%= f.input :last_name %>
               <%= f.input :address %>
@@ -32,6 +28,8 @@
               <%= f.input :password_confirmation,
                           required: true,
                           input_html: { autocomplete: "new-password" } %>
+              <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+              <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
               <%= f.button :submit, "Sign up", { class:"text-white btn-flat" } %>
             </div>
       <div class="d-flex align-items-center flex-column mt-3">

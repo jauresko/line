@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_201138) do
+ActiveRecord::Schema.define(version: 2019_09_06_150928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,26 @@ ActiveRecord::Schema.define(version: 2019_09_05_201138) do
     t.index ["review_id"], name: "index_bookings_on_review_id"
     t.index ["travel_id"], name: "index_bookings_on_travel_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "booking_id"
+    t.bigint "order_id"
+    t.index ["booking_id"], name: "index_chat_rooms_on_booking_id"
+    t.index ["order_id"], name: "index_chat_rooms_on_order_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "chat_room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "time"
+    t.text "content"
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -115,6 +135,10 @@ ActiveRecord::Schema.define(version: 2019_09_05_201138) do
   add_foreign_key "bookings", "reviews"
   add_foreign_key "bookings", "travels"
   add_foreign_key "bookings", "users"
+  add_foreign_key "chat_rooms", "bookings"
+  add_foreign_key "chat_rooms", "orders"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "orders", "purchases"
   add_foreign_key "orders", "review_orders"
   add_foreign_key "orders", "users"

@@ -14,7 +14,7 @@
         <hr style="margin: 0">
         <div class="d-flex align-items-center justify-content-center m-3">
           <div>
-            <%= cl_image_tag current_user.photo, class: "avatar " %>
+            <%= cl_image_tag @travel.user.photo, class: "avatar " %>
           </div>
           <div>
             <p style="margin: 0; margin-left: 12px"><%= @travel.user.first_name %> <%= @travel.user.last_name %></p>

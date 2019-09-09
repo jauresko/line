@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
   belongs_to :user
   belongs_to :purchase
-  belongs_to :review_order
+  has_one :chat_room
 end
