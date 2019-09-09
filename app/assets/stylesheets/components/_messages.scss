@@ -7,7 +7,8 @@
   border-top: none;
   border-bottom-width: 0;
   // max-height: calc(100vh - 70px - 45px - 61px - 30px);
-  height: calc(80vh - 130px);
+  // height: calc(80vh - 130px);
+  height: 88%;
   overflow: scroll;
 }
 
@@ -35,7 +36,7 @@
 
 #create-message {
   padding: 10px;
-  background-color: $line2;
+  background-color: $line;
   // margin-bottom: 20px;
   border: 1px solid #ececec;
   display: flex;
@@ -60,7 +61,7 @@ input.form-control {
   }
 }
 .chat-header {
-  background-color: $line2;
+  background-color: $line;
   color: white;
   padding: 10px 20px;
   // margin-top: 10px;
@@ -77,4 +78,10 @@ input.form-control {
 
 #chatroom-box {
   padding: 0;
+}
+
+.text-field {
+width: 100%;
+display: flex;
+justify-content: center
 }

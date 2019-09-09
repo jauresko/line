@@ -1,30 +1,41 @@
-<div class ="container" id="chatroom-page">
-  <div class ="row">
-    <div class = "col-sm-6 col-sm-offset-3" id="chatroom-box">
-      <div class = "chat-header"> <h4>#<%= @booking.user == current_user ? @booking.travel.user.first_name : @booking.user.first_name %></h4></div>
-      <div id=<%= @chat_room.id %> class ="messages">
-        <% @chat_room.messages.each do |message| %>
-          <%= render "shared/messages", message: message, user_is_messages_author: message.user == current_user %>
-        <% end %>
+<div id="chatroom-page">
+    <div class = "col-xl-12 col-lg-12 col-sm-6 col-sm-offset-3" id="chatroom-box">
+      <% if @booking %>
+        <div class = "chat-header"> <h4><%= @booking.user == current_user ? @booking.travel.user.first_name : @booking.user.first_name %></h4></div>
+        <div id=<%= @chat_room.id %> class ="messages">
+          <% @chat_room.messages.each do |message| %>
+            <%= render "shared/messages", message: message, user_is_messages_author: message.user == current_user %>
+          <% end %>
+        </div>
+        <div id= "create-message">
+          <%= simple_form_for :message, url: travel_booking_chat_room_messages_path(@booking.travel, @booking, @chat_room), class:"text-field", method: :post,remote: true do |f| %>
+            <%= f.input :content, label: false %>
+          <% end %>
+        </div>
       </div>
-      <div id= "create-message">
-        <%= simple_form_for :message, url: travel_booking_chat_room_messages_path(@booking.travel, @booking, @chat_room), method: :post,remote: true do |f| %>
-          <%= f.input :content, label: false %>
-        <% end %>
+      <% elsif @order %>
+        <div class = "chat-header"> <h4><%= @order.user == current_user ? @order.purchase.user.first_name : @order.user.first_name %></h4></div>
+        <div id=<%= @chat_room.id %> class ="messages">
+          <% @chat_room.messages.each do |message| %>
+            <%= render "shared/messages", message: message, user_is_messages_author: message.user == current_user %>
+          <% end %>
+        </div>
+        <div id= "create-message">
+          <%= simple_form_for :message, url: purchase_order_chat_room_messages_path(@order.purchase, @order, @chat_room), class:"text-field", method: :post,remote: true do |f| %>
+            <%= f.input :content, label: false %>
+          <% end %>
+        </div>
       </div>
-    </div>
-  </div>
+      <% end %>
 </div>
 <% content_for :after_js do %>
 <script>
-  scrollLastMessageIntoView();
   App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create(
     { channel: 'ChatRoomsChannel', chat_room_id: <%= @chat_room.id %> },
     { received: (data) => {
        if (data.current_user_id !== <%= current_user.id %>) {
           const messagesContainer = document.querySelector('.messages');
           messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
-          scrollLastMessageIntoView();
         }
       }
      })

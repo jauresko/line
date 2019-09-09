@@ -1,4 +1,6 @@
 class ChatRoomsController < ApplicationController
+  layout 'chat_rooms'
+
   def show
     if params[:booking_id].present?
       @booking = Booking.find(params[:booking_id])
