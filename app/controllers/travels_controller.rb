@@ -2,7 +2,7 @@ class TravelsController < ApplicationController
   before_action :set_travel, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :index
   skip_before_action :authenticate_user!, only: :new
-  layout 'chat_rooms'
+  layout 'pages'
 
   def index
     if params[:from].present? && params[:to].present?
@@ -57,6 +57,6 @@ class TravelsController < ApplicationController
   end
 
   def travel_params
-    params.require(:travel).permit(:departure_date, :arrival_date, :arrival_place, :departure_place, :arrival_hour, :pick_up_place, :price, :details, :weight_left)
+    params.require(:travel).permit(:departure_date, :arrival_date, :arrival_place, :departure_place, :arrival_hour, :price, :details, :weight_left)
   end
 end

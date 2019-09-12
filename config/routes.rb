@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'myprofile', to: 'pages#profil', as: 'profil'
   get 'myprofile/mypurchase', to: 'purchases#mypurchase', as: 'mypurchase'
   get 'myprofile/mytravel', to: 'travels#mytravel', as: 'mytravel'
   get 'myprofile/order', to: 'orders#display_resa', as: 'myorder'

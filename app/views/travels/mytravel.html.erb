@@ -11,7 +11,6 @@
     <p><%= travel.departure_date.strftime("%d %B %Y")%>   <i class="fas fa-arrow-right m-3"></i>   <%= travel.arrival_date.strftime("%d %B %Y") %></p>
     <p>Departure from <strong><%= travel.departure_place %></strong> to <strong><%= travel.arrival_place %></strong> at <strong><%= travel.arrival_hour %></strong>for <strong><%= travel.price %>€</strong>.</p>
     <p>Only <strong><%= travel.weight_left %> kilos left</strong></p>
-    <p>Pick up the package at <strong><%= travel.pick_up_place %></strong></p>
   </div>
 
   <div class="notification-actions d-flex flex-column">

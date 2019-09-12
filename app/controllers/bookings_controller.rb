@@ -14,14 +14,20 @@ class BookingsController < ApplicationController
     @user = current_user
     @travel = Travel.find(params[:travel_id])
     @booking = Booking.new(booking_params)
-    @booking.total_price = @travel.price
-    @booking.date = @travel.arrival_date
-    @booking.user_id = @user.id
-    @booking.travel_id = @travel.id
-    if @booking.save
-      @chat_room = ChatRoom.create(booking_id: @booking.id)
-      @chat_room.save
-      redirect_to travel_booking_path(@travel, @booking)
+    if @booking.weight <= @travel.weight_left
+      @booking.total_price = @travel.price
+      @booking.date = @travel.arrival_date
+      @booking.user_id = @user.id
+      @booking.travel_id = @travel.id
+      if @booking.save
+        @travel.weight_left = @travel.weight_left - @booking.weight
+        @travel.save
+        @chat_room = ChatRoom.create(booking_id: @booking.id)
+        @chat_room.save
+        redirect_to travel_booking_path(@travel, @booking)
+      else
+        render :new
+      end
     else
       render :new
     end
@@ -52,11 +58,9 @@ class BookingsController < ApplicationController
     redirect_to mybooking_path(@booking)
   end
 
-
   private
 
   def booking_params
-    params.require(:booking).permit(:meeting_place, :date, :drop_place, :total_price, :recipient, :status)
+    params.require(:booking).permit(:meeting_place, :date, :total_price, :recipient, :status, :description, :weight)
   end
-
 end

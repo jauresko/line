@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_06_150928) do
+ActiveRecord::Schema.define(version: 2019_09_12_005104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.string "meeting_place"
     t.date "date"
-    t.string "drop_place"
     t.integer "total_price"
     t.string "status", default: "Pending"
     t.bigint "user_id"
@@ -27,6 +25,8 @@ ActiveRecord::Schema.define(version: 2019_09_06_150928) do
     t.datetime "updated_at", null: false
     t.string "recipient"
     t.bigint "review_id"
+    t.integer "weight"
+    t.text "description"
     t.index ["review_id"], name: "index_bookings_on_review_id"
     t.index ["travel_id"], name: "index_bookings_on_travel_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2019_09_06_150928) do
 
   create_table "orders", force: :cascade do |t|
     t.date "date"
-    t.string "drop_place"
     t.integer "total_price"
     t.string "status", default: "Pending"
     t.bigint "user_id"
@@ -77,7 +76,6 @@ ActiveRecord::Schema.define(version: 2019_09_06_150928) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "delivery_place"
     t.integer "bonus_traveler"
     t.string "status", default: "Pending"
     t.index ["user_id"], name: "index_purchases_on_user_id"
@@ -106,7 +104,6 @@ ActiveRecord::Schema.define(version: 2019_09_06_150928) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price"
-    t.string "pick_up_place"
     t.text "details"
     t.string "departure_place"
     t.integer "weight_left"

@@ -61,7 +61,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:date, :drop_place, :total_price, :status)
+    params.require(:order).permit(:date, :total_price, :status)
   end
 
   def price_calculator

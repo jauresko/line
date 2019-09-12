@@ -19,14 +19,23 @@
 
 
 <% @travels.each do |travel| %>
+<% if travel.user == current_user %>
+<% else %>
+<% if travel.user.photo.file.nil? %>
+<div class="blog-card-2">
+    <div class="meta">
+      <%= image_tag "user.png", height: 300, width: 300, crop: :fill, class:"photo" %>
+      </div>
+<% else %>
 <div class="blog-card-2">
     <div class="meta">
       <%= cl_image_tag travel.user.photo, height: 300, width: 300, crop: :fill, class:"photo"%>
     </div>
+<% end %>
     <div class="description-2">
       <h2><strong><%= travel.user.last_name %></strong></h2>
       <h2>Departure from <strong><%= travel.departure_date.strftime("%d %B %Y") %></strong> to <strong><%= travel.arrival_date %></strong></h2>
-      <p> Arrival at <strong><%= travel.arrival_hour %></strong> and pick-up at <strong><%= travel.pick_up_place %></strong> </p>
+      <p> Arrival at <strong><%= travel.arrival_hour %></strong></p>
       <p>Weight left: <strong><%= travel.weight_left %></strong></p>
       <p>Price: <strong><%= travel.price %></strong> €</p>
       <p class="read-more-2">
@@ -35,4 +44,5 @@
     </div>
   </div>
   </div>
+<% end %>
 <% end %>

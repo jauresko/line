@@ -2,7 +2,7 @@ class PurchasesController < ApplicationController
   before_action :set_purchase, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :index
   skip_before_action :authenticate_user!, only: :new
-  layout 'chat_rooms'
+  layout 'pages'
 
   def index
     if params[:from].present? && params[:to].present?
@@ -60,6 +60,6 @@ class PurchasesController < ApplicationController
   end
 
   def purchase_params
-    params.require(:purchase).permit(:product_url, :name, :photo, :purchase_place, :seller, :price, :bonus_traveler, :delivery_place, :status)
+    params.require(:purchase).permit(:product_url, :name, :photo, :purchase_place, :seller, :price, :bonus_traveler, :status)
   end
 end

@@ -1,0 +1,30 @@
+.card-profile {
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: 20px
+}
+
+.avatar-profile {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-container {
+  height: 60%;
+  border-color: $line2;
+  background-color: $line;
+  border-radius: 3%
+}
+
+.pencil-color {
+  color: $line2
+}
+
+.pencil-position {
+  position: relative;
+  left: 138px;
+  bottom: 40px
+}

@@ -18,6 +18,10 @@
             <p>Complementary information</p>
             <p><%= @booking.travel.details %></p>
           </div>
+          <div>
+            <p><span><%= @booking.weight %></span></p>
+            <p><span><%= @booking.description %></span></p>
+          </div>
           <p><%=link_to "contact this liner", travel_booking_chat_room_path(@booking.travel, @booking) %></p>
         </div>
       </div>

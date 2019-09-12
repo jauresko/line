@@ -18,15 +18,24 @@
 </div>
 </div>
 
-  <% @purchases.each do |purchase| %>
+<% @purchases.each do |purchase| %>
+<% if purchase.user == current_user %>
+<% else %>
+<% if purchase.photo.file.nil? %>
+<div class="blog-card">
+    <div class="meta">
+      <%= image_tag "no-photo", height: 300, width: 300, crop: :fill, class:"photo"%>
+    </div>
+<% else %>
 <div class="blog-card">
     <div class="meta">
       <%= cl_image_tag purchase.photo, height: 300, width: 300, crop: :fill, class:"photo"%>
     </div>
+<% end %>
     <div class="description">
       <h2><strong><%= purchase.name %></strong></h2>
       <h2><strong><%= purchase.seller %></strong></h2>
-      <p> Buy in <strong><%= purchase.purchase_place %></strong> and deliver it in <strong><%= purchase.delivery_place %></strong> </p>
+      <p> Buy at <strong><%= purchase.purchase_place %></strong> </p>
       <p>Url: <strong><%= purchase.product_url %></strong></p>
       <p class="read-more">
         <a href=<%= "purchases/#{purchase.id}" %>>Read More</a>
@@ -34,4 +43,5 @@
     </div>
   </div>
   </div>
+<% end %>
 <% end %>

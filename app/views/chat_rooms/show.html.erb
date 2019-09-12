@@ -1,7 +1,12 @@
 <div id="chatroom-page">
-    <div class = "col-xl-12 col-lg-12 col-sm-6 col-sm-offset-3" id="chatroom-box">
+    <div class = "col-xl-12 col-lg-12 col-sm-12 col-sm-offset-3 col-12 col-xs-12" id="chatroom-box">
       <% if @booking %>
-        <div class = "chat-header"> <h4><%= @booking.user == current_user ? @booking.travel.user.first_name : @booking.user.first_name %></h4></div>
+        <div class = "chat-header">
+          <%= link_to root_path, class:"text-white" do %>
+            <i class="fas fa-arrow-left"></i>
+          <% end %>
+          <h4 class="text-center"><%= @booking.user == current_user ? @booking.travel.user.first_name : @booking.user.first_name %></h4>
+        </div>
         <div id=<%= @chat_room.id %> class ="messages">
           <% @chat_room.messages.each do |message| %>
             <%= render "shared/messages", message: message, user_is_messages_author: message.user == current_user %>
@@ -10,7 +15,9 @@
         <div id= "create-message">
           <%= simple_form_for :message, url: travel_booking_chat_room_messages_path(@booking.travel, @booking, @chat_room), class:"text-field", method: :post,remote: true do |f| %>
             <%= f.input :content, label: false %>
+            <%= f.button :submit, "Send", class:"btn-flat-2 ml-3" %>
           <% end %>
+
         </div>
       </div>
       <% elsif @order %>
