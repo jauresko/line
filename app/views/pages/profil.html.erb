@@ -9,6 +9,11 @@
       <p class="mt-3"><%= current_user.address.capitalize %></p>
       <p class="mt-3"><%= current_user.nationality.capitalize %></p>
       <p class="mt-3"><%= current_user.telephone %></p>
+      <% if current_user.document.file.nil? %>
+        <%= link_to "Upload your I.D"  ,edit_user_registration_path %>
+      <% else %>
+        <i class="fas fa-user-check"></i><p>Verified</p>
+      <% end %>
     </div>
   </div>
 </div>

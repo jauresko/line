@@ -14,7 +14,11 @@
 
         <div class="form-inputs">
           <h2>Edit your profile</h2>
-          <%= f.input :photo, label: 'upload your profil picture' %>
+          <%= f.input :photo, label: 'change your profil picture' %>
+          <% if current_user.document.file.nil? %>
+            <%= f.input :document, label: 'upload your I.D' %>
+          <% end %>
+          <hr style="magin: 0">
           <%= f.input :address %>
           <%= f.input :telephone %>
           <%= f.input :whatsapp_number %>
@@ -22,7 +26,7 @@
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
-
+          <hr style="magin: 0">
           <%= f.input :password,
                       hint: "leave it blank if you don't want to change it",
                       required: false,

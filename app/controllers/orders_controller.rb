@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  layout 'pages'
   def index
     @orders = order.all
     @restricted_orders = order.where(warrior_id: params[:warrior_id]).order(created_at: :desc)

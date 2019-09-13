@@ -29,7 +29,7 @@
                 <% end %>
                 <% current_user.travels.each do |travel| %>
                   <% travel.bookings.each do |booking| %>
-                    <%= link_to "#{booking.user.first_name}", travel_order_chat_room_path(booking.travel, booking, booking.chat_room), class:"dropdown-item" %>
+                    <%= link_to "#{booking.user.first_name}", travel_booking_chat_room_path(booking.travel, booking, booking.chat_room), class:"dropdown-item" %>
                   <% end %>
                 <% end %>
                 <% end %>

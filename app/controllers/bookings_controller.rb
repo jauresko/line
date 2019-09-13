@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  layout "pages"
   def index
     @bookings = Booking.all
     @restricted_bookings = Booking.where(warrior_id: params[:warrior_id]).order(created_at: :desc)

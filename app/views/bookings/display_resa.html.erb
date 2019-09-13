@@ -14,8 +14,6 @@
     <p><%= booking.travel.departure_date.strftime("%d %B %Y")%>   <i class="fas fa-arrow-right m-3"></i>   <%= booking.travel.arrival_date.strftime("%d %B %Y") %></p>
     <p>Departure from <strong><%= booking.travel.departure_place %></strong> to <strong><%= booking.travel.arrival_place %></strong> at <strong><%= booking.travel.arrival_hour %></strong>.</p>
     <p>Only <strong><%= booking.travel.weight_left %> kilos left</strong></p>
-    <p>Pick up the package at <strong><%= booking.travel.pick_up_place %></strong></p>
-    <p><strong><%= booking.meeting_place %></strong></p>
     <p>Paid <strong><%= booking.total_price %>€</strong></p>
     <p><strong><%= booking.status %></strong></p>
   </div>

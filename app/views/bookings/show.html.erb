@@ -8,18 +8,14 @@
             <h3><%= @booking.date.strftime("%d %B %Y") %></h3>
             <hr style="margin: 0">
         </div>
-        <div class="d-inline">
-           <p><span></span> Meeting place: <%= @booking.meeting_place %></p>
-           <i class="fas fa-arrow-down"></i>
-           <p class="mt-2"><span></span> Drop place: <%= @booking.drop_place %></p>
-        </div>
         <hr style="margin: 0">
           <div>
             <p>Complementary information</p>
             <p><%= @booking.travel.details %></p>
           </div>
           <div>
-            <p><span><%= @booking.weight %></span></p>
+            <p>You just book <span><%= @booking.weight %></span> kg</p>
+            <p>Information on your booking</p>
             <p><span><%= @booking.description %></span></p>
           </div>
           <p><%=link_to "contact this liner", travel_booking_chat_room_path(@booking.travel, @booking) %></p>
