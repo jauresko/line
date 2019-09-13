@@ -41,6 +41,9 @@
       <p class="read-more-2">
         <a href=<%= "travels/#{travel.id}" %>>Read More</a>
       </p>
+      <% unless travel.user.document.file.nil? %>
+        <i class="fas fa-user-check"></i>
+      <% end %>
     </div>
   </div>
   </div>
