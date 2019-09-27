@@ -20,112 +20,38 @@
 
 
   <div class="container text-center pagination-center" id = "send-path">
-    <div class="row d-flex justify-content-between">
-      <div class= "col-md-6 col-lg-6 col-sm-6 col-xs-12">
-        <div class="card-product mb-3 mr-1 ">
-          <%=image_tag('loupe.svg')%>
-          <div class="card-product-infos">
-            <h2>As a sender</h2>
-            <p>1 - Enter a place</p>
-          </div>
-        </div>
-      </div>
-      <div class= "col-md-6 col-lg-6 col-sm-6 col-xs-12">
-        <div class="card-product mb-3 mr-1">
-          <%=image_tag('find-my-friend.svg')%>
-          <div class="card-product-infos">
-            <h2>As a sender</h2>
-            <p>2 - Find a traveler</p>
-          </div>
-        </div>
-      </div>
-      <div class= "col-md-6 col-lg-4-6 col-sm-6 col-xs-12">
-        <div class="card-product mb-3 mr-1">
-          <%=image_tag('meeting.svg')%>
-          <div class="card-product-infos">
-            <h2>As a traveler</h2>
-            <p>3 - Meet and check the package</p>
-          </div>
-        </div>
-      </div>
-      <div class= "col-md-6 col-lg-6 col-sm-6 col-xs-12">
-        <div class="card-product mb-3 mr-1">
-          <%=image_tag('browser.svg')%>
-          <div class="card-product-infos">
-            <h2>As a traveler</h2>
-            <p>4 - Travel safely with the package</p>
-          </div>
-        </div>
-      </div>
-      <div class= "col-md-12 col-lg-12 col-sm-12 col-xs-12 d-flex justify-content-center text-center">
-        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-          <div class="card-product mb-3 mr-1">
-            <%=image_tag('happy.svg')%>
-            <div class="card-product-infos">
-              <h2>As a traveler</h2>
-              <p>5 - Bring it the recipient and get your money</p>
-            </div>
-          </div>
-        </div>
+    <div class="row d-flex justify-content-center">
+      <div class="app rounded col-md-12 col-lg-12 col-sm-8 col-xs-8 col-10 mb-5">
+        <header>
+        </header>
+        <main>
+          <h2><strong>When you want to send a package</strong></h2>
+          <p>1 - Enter a place</p>
+          <p>2 - Find a traveler</p>
+          <p>3 - Meet and check the package</p>
+          <p>4 - Travel safely with the package</p>
+          <p>5 - Bring it the recipient and get your money</p>
+          <%= link_to "Send now", travels_path, class: "btn btn-flat m-3" %>
+        </main>
       </div>
     </div>
   </div>
 
   <div class="container text-center pagination-center" id = "buy-path">
     <div class="row d-flex justify-content-between">
-      <div class= "col-md-6 col-lg-4 col-sm-6 col-xs-12">
-        <div class="card-product mb-3 mr-1 ">
-          <%=image_tag('loupe.svg')%>
-          <div class="card-product-infos">
-            <h2 class="color-line-2">As a buyer</h2>
-            <p>1 - Make an order</p>
-          </div>
-        </div>
-      </div>
-      <div class= "col-md-6 col-lg-4 col-sm-6 col-xs-12">
-        <div class="card-product mb-3 mr-1">
-          <%=image_tag('broadcaster.svg')%>
-          <div class="card-product-infos">
-            <h2 class="color-line-2">As a buyer</h2>
-            <p>2 - Ask to the line community to buy it</p>
-          </div>
-        </div>
-      </div>
-      <div class= "col-md-6 col-lg-4 col-sm-6 col-xs-12">
-        <div class="card-product mb-3 mr-1">
-          <%=image_tag('check.svg')%>
-          <div class="card-product-infos">
-            <h2 class="color-line-2">As a traveler</h2>
-            <p>3 - Validate the purchase</p>
-          </div>
-        </div>
-      </div>
-      <div class= "col-md-6 col-lg-4 col-sm-6 col-xs-12">
-        <div class="card-product mb-3 mr-1">
-          <%=image_tag('buy.svg')%>
-          <div class="card-product-infos">
-            <h2 class="color-line-2">As a traveler</h2>
-            <p>4 - Go purchase the product</p>
-          </div>
-        </div>
-      </div>
-      <div class= "col-md-6 col-lg-4 col-sm-6 col-xs-12">
-        <div class="card-product mb-3 mr-1">
-          <%=image_tag('browser.svg')%>
-          <div class="card-product-infos">
-            <h2 class="color-line-2">As a traveler</h2>
-            <p>5 - Travel safely with the package</p>
-          </div>
-        </div>
-      </div>
-      <div class= "col-md-6 col-lg-4 col-sm-6 col-xs-12">
-        <div class="card-product mb-3 mr-1">
-          <%=image_tag('happy.svg')%>
-          <div class="card-product-infos">
-            <h2 class="color-line-2">As a traveler</h2>
-            <p>6 - Bring it the recipient and get your money</p>
-          </div>
-        </div>
+      <div class="app rounded col-md-12 col-lg-12 col-sm-8 col-xs-8 col-10 mb-5">
+        <header>
+        </header>
+        <main>
+          <h2><strong>When you want to buy something abroad</strong></h2>
+          <p>1 - Make an order</p>
+          <p>2 - Ask to the line community to buy it</p>
+          <p>3 - Validate the purchase</p>
+          <p>4 - Go purchase the product</p>
+          <p>5 - Travel safely with the package</p>
+          <p>6 - Bring it the recipient and get your money</p>
+          <%= link_to "Fly with us", purchases_path, class: "btn btn-flat-2 m-3" %>
+        </main>
       </div>
     </div>
   </div>
