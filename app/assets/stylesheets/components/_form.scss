@@ -10,7 +10,8 @@
 }
 
 .sign {
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)),image-url('sign_up_picture.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)),image-url('bagages.jpg');
+  object-fit: cover;
   color: #ebeaeb;
   min-height: 100vh;
   padding: 56px;

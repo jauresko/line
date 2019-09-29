@@ -10,6 +10,7 @@
   // height: calc(80vh - 130px);
   height: 88%;
   overflow: scroll;
+  padding-top: 100px;
 }
 
 .message {
@@ -42,6 +43,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 .message_content {
   margin-bottom: 0;
@@ -61,6 +65,8 @@ input.form-control {
   }
 }
 .chat-header {
+  position: fixed;
+  width: 100%;
   background-color: $line;
   color: white;
   padding: 10px 20px;

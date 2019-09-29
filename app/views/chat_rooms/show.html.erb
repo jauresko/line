@@ -1,4 +1,4 @@
-<div id="chatroom-page">
+
     <div class = "col-xl-12 col-lg-12 col-sm-12 col-sm-offset-3 col-12 col-xs-12" id="chatroom-box">
       <% if @booking %>
         <div class = "chat-header">
@@ -7,7 +7,7 @@
           <% end %>
           <h4 class="text-center"><%= @booking.user == current_user ? @booking.travel.user.first_name : @booking.user.first_name %></h4>
         </div>
-        <div id=<%= @chat_room.id %> class ="messages">
+        <div id=<%= @chat_room.id %> class ="messages mb-5">
           <% @chat_room.messages.each do |message| %>
             <%= render "shared/messages", message: message, user_is_messages_author: message.user == current_user %>
           <% end %>
@@ -34,7 +34,6 @@
         </div>
       </div>
       <% end %>
-</div>
 <% content_for :after_js do %>
 <script>
   App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create(
