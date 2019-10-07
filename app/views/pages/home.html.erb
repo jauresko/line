@@ -3,17 +3,17 @@
     <div class="container">
       <div class="text-center pagination-center">
         <h1 class="mb-3 " style="font-size:8vw;">Crowdshipping</h1>
-        <p>Order or send everywhere</p>
-        <p>Monetize your travel</p>
+        <p><%= t("home.description") %></p>
+        <p><%= t("home.under_description") %></p>
         <div class ="d-flex justify-content-center">
-          <%= link_to "Take an order", purchases_path, class: "btn btn-flat-2 m-3" %>  <%= link_to "Send now", travels_path, class: "btn btn-flat m-3" %>
+          <%= link_to t("home.btn_order"), purchases_path, class: "btn btn-flat-2 m-3" %>  <%= link_to t("home.btn_send"), travels_path, class: "btn btn-flat m-3" %>
         </div>
       </div>
     </div>
   </div>
 
     <div class="container text-center pagination-center mb-3">
-      <h2><strong>How it works ?</strong></h2>
+      <h2><strong><%= t("home.how_it_works") %></strong></h2>
       <a class="border-bottom border-primary mr-5" id="sender-display"><strong>Send</strong></a>
       <a class="border-bottom border-primary ml-5" id="buy-display"><strong>Buy</strong></a>
     </div>
@@ -25,13 +25,13 @@
         <header>
         </header>
         <main>
-          <h2><strong>When you want to send a package</strong></h2>
-          <p>1 - Enter a place</p>
-          <p>2 - Find a traveler</p>
-          <p>3 - Meet and check the package</p>
-          <p>4 - Travel safely with the package</p>
-          <p>5 - Bring it the recipient and get your money</p>
-          <%= link_to "Send now", travels_path, class: "btn btn-flat m-3" %>
+          <h2><strong><%= t("home.how_send") %></strong></h2>
+          <p><%= t("home.how_send_1") %></p>
+          <p><%= t("home.how_send_2") %></p>
+          <p><%= t("home.how_send_3") %></p>
+          <p><%= t("home.how_send_4") %></p>
+          <p><%= t("home.how_send_5") %></p>
+          <%= link_to t("home.btn_send"), travels_path, class: "btn btn-flat m-3" %>
         </main>
       </div>
     </div>
@@ -43,14 +43,14 @@
         <header>
         </header>
         <main>
-          <h2><strong>When you want to buy something abroad</strong></h2>
-          <p>1 - Make an order</p>
-          <p>2 - Ask to the line community to buy it</p>
-          <p>3 - The money plus his bonus is already lock !</p>
-          <p>4 - he purchase the product</p>
-          <p>5 - Travel safely with the package</p>
-          <p>6 - Bring it to you and get the money</p>
-          <%= link_to "Fly with us", purchases_path, class: "btn btn-flat-2 m-3" %>
+          <h2><strong><%= t("home.how_buy") %></strong></h2>
+          <p><%= t("home.how_buy_1") %></p>
+          <p><%= t("home.how_buy_2") %></p>
+          <p><%= t("home.how_buy_3") %></p>
+          <p><%= t("home.how_buy_4") %></p>
+          <p><%= t("home.how_buy_5") %></p>
+          <p><%= t("home.how_buy_6") %></p>
+          <%= link_to t("home.buy_now"), purchases_path, class: "btn btn-flat-2 m-3" %>
         </main>
       </div>
     </div>
