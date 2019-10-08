@@ -1,5 +1,17 @@
 fr:
+  navbar:
+    order: "Commandez maintenant"
+    travel: "Rentabilisez vos voyages"
+    profil: "Profil"
+    purchases: "Mes achats"
+    travels: "Mes voyages"
+    orders: "Mes commandes"
+    bookings: "Mes livraisons"
+    log_out: "Deconnexion"
+    sign_up: "S'inscrire"
+    login: "Se connecter"
   home:
+    home: "Accueil"
     description: "Commander et envoyer vos colis partout"
     under_description: "Faites-vous de l'argent en voyageant"
     btn_send: "Envoyer"
@@ -21,4 +33,35 @@ fr:
     how_buy_4: "4 - Il achète le produit"
     how_buy_5: "5 - Voyage en touté sécurité avec le produit"
     how_buy_6: "6 - Il l'amène à vous et reçoie son argent"
+  purchases:
+    index:
+      search: "Rechercher"
+      departure: "Depart"
+      arrival: "Arrivée"
+      order: "Trouver une commande"
+    new:
+      order: "Passez une commande"
+      url: "Lien vers le produit"
+      name: "Nom du produit"
+      seller: "Vendeur"
+      place: "Où (pays ou ville)"
+      price: "Prix"
+      bonus: "Bonus du voyageur"
+      upload: "📷 charger une photo"
+  travels:
+    index:
+      travel: "Trouver un transporteur"
+      from: "De"
+      to: "A"
+      search: "Recherhcer"
+    new:
+      travel: "Voyagez avec nous"
+      departure: "Date de depart"
+      arrival: "Date d'arrivée"
+      d_place: "Lieu de depart"
+      a_place: "Lieu d'arrivée"
+      a_hour: "Heure d'arrivée"
+      weight_left: "Poids restant"
+      price: "Prix"
+      details: "Details"
 

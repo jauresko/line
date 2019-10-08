@@ -1,5 +1,20 @@
 en:
+  footer:
+    terms: "Terms"
+    contact: "Contact"
+  navbar:
+    order: "Order with us"
+    travel: "Monetize your travel"
+    profil: "Profil"
+    purchases: "My purchases"
+    travels: "My travels"
+    orders: "My orders"
+    bookings: "My deliveries"
+    log_out: "Log out"
+    sign_up: "Sign up"
+    login: "Login"
   home:
+    home: "Home"
     description: "Order or send everywhere"
     under_description: "Monetize your travel"
     btn_send: "Send now"
@@ -21,3 +36,36 @@ en:
     how_buy_4: "4 - he purchase the product"
     how_buy_5: "5 - Travel safely with the package"
     how_buy_6: "6 - Bring it to you and get the money"
+  purchases:
+    index:
+      search: "Search"
+      departure: "Departure"
+      arrival: "Arrival"
+      order: "Find an order"
+    new:
+      order: "Make an order with us"
+      url: "Product url"
+      name: "Product name"
+      seller: "Seller"
+      place: "Place to purchase"
+      price: "Price"
+      bonus: "Traveler bonus"
+      upload: "📷 Upload a photo"
+  travels:
+    index:
+      travel: "Find a transporter"
+      from: "From"
+      to: "To"
+      search: "Search"
+    new:
+      travel: "Travel with us"
+      departure: "Departure date"
+      arrival: "Arrival date"
+      d_place: "Departure place"
+      a_place: "Arrival place"
+      a_hour: "Arrival hour"
+      weight_left: "Weight left"
+      price: "Price"
+      details: "Details"
+
+

@@ -28,7 +28,7 @@
         <div class="card-travel-show-attributes">
           <p><span>Price:</span> <%= @travel.price %> €</p>
           <p><span>Arrival hour:</span> <%= @travel.arrival_hour %></p>
-          <p><span>Weight left:</span> <%= @travel.weight_left %>kilos</p>
+          <p><span>Weight left:</span> <%= @travel.weight_left %>kg</p>
         </div>
         <%= link_to "Ask this liner", new_travel_booking_path(params["id"]), class:'btn-flat' unless current_user.travels.include?(@travel) %>
         <%= link_to "Back to your travels", travels_path %>

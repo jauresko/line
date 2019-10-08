@@ -1,19 +1,19 @@
 <div class = "mt-5 mb-5" style="text-align: center">
-  <h2>Find an order</h2>
+  <h2><%= t("purchases.index.order") %></h2>
 </div>
 <div class="d-flex flex-column align-items-center mb-5">
   <%= form_tag purchases_path, class:"text-align-center pagination-center",method: :get do %>
   <%= text_field_tag :from,
     params[:from],
-    class: " form-control form-search col-xl-12 col-lg-12 col-md-12 col-sm-12 form-index mb-3",required: false,
-    placeholder: "Departure"
+    class: " form-control form-search col-xl-12 col-lg-12 col-md-8 col-sm-8 form-index mb-3",required: false,
+    placeholder: t("purchases.index.departure")
   %>
   <%= text_field_tag :to,
     params[:to],
     class: "form-control form-search col-xl-12 col-lg-12 col-md-12 col-sm-12 form-index mb-3",required: false,
-    placeholder: "Arrival"
+    placeholder: t("purchases.index.arrival")
   %>
-  <%= submit_tag "Search", class: "btn-flat-2" %>
+  <%= submit_tag t("purchases.index.search"), class: "btn-flat-2" %>
 <% end %>
 </div>
 </div>
