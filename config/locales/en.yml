@@ -1,5 +1,6 @@
 en:
   footer:
+    title: "Here you can send and purchase your package everywhere."
     terms: "Terms"
     contact: "Contact"
   navbar:
@@ -42,6 +43,8 @@ en:
       departure: "Departure"
       arrival: "Arrival"
       order: "Find an order"
+      buy: "Buy at"
+      more: "Read more"
     new:
       order: "Make an order with us"
       url: "Product url"
@@ -51,12 +54,27 @@ en:
       price: "Price"
       bonus: "Traveler bonus"
       upload: "📷 Upload a photo"
+    show:
+      summary: "Summary"
+      price: "Price"
+      bonus: "Bonus traveler"
+      name: "Product name"
+      seller: "Seller"
+      country: "Country"
+      back: "Back"
+      ask: "Contact this liner"
   travels:
     index:
       travel: "Find a transporter"
       from: "From"
       to: "To"
       search: "Search"
+      departure: "Departure from"
+      to: "to"
+      arrival_at: "Arrival at"
+      price: "price"
+      weight: "Weight left"
+      more: "Read more"
     new:
       travel: "Travel with us"
       departure: "Departure date"
@@ -67,5 +85,13 @@ en:
       weight_left: "Weight left"
       price: "Price"
       details: "Details"
+    show:
+      summary: "Summary"
+      complementary: "Complementary information"
+      price: "Price"
+      arrival: "Arrival hour"
+      weight: "Weight left"
+      back: "Back"
+      ask: "Book this liner"
 
 

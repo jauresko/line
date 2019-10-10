@@ -1,4 +1,8 @@
 fr:
+  footer:
+    title: "Envoyez et acheter à l'étranger."
+    terms: "Conditions générales"
+    contact: "Contact"
   navbar:
     order: "Commandez maintenant"
     travel: "Rentabilisez vos voyages"
@@ -39,6 +43,8 @@ fr:
       departure: "Depart"
       arrival: "Arrivée"
       order: "Trouver une commande"
+      buy: "Achetez à"
+      more: "En savoir plus"
     new:
       order: "Passez une commande"
       url: "Lien vers le produit"
@@ -48,12 +54,27 @@ fr:
       price: "Prix"
       bonus: "Bonus du voyageur"
       upload: "📷 charger une photo"
+    show:
+      summary: "Résumé"
+      price: "Prix"
+      bonus: "Bonus voyageur"
+      name: "Nom du produit"
+      seller: "Vendeur"
+      country: "Pays ou ville"
+      back: "Retour"
+      ask: "Contacter"
   travels:
     index:
       travel: "Trouver un transporteur"
       from: "De"
       to: "A"
       search: "Recherhcer"
+      departure: "Depart de"
+      to: "à"
+      arrival_at: "Arrivée à"
+      price: "Prix"
+      weight: "Poids restant"
+      more: "En savoir plus"
     new:
       travel: "Voyagez avec nous"
       departure: "Date de depart"
@@ -64,4 +85,12 @@ fr:
       weight_left: "Poids restant"
       price: "Prix"
       details: "Details"
+    show:
+      summary: "Résumé"
+      complementary: "Information complémentaire"
+      price: "Prix"
+      arrival: "Heure d'arrivée"
+      weight: "Poids restant"
+      back: "Retour"
+      ask: "Contacter ce liner"
 

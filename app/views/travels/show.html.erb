@@ -2,8 +2,8 @@
    <div class="card-travel-show col-xl-10 col-lg-10 col-md-12 col-sm-12 d-flex justify-content-center text-align-center">
      <div class="card-travel-show-infos">
         <div class="card-travel-show-description">
-            <h2>Summary</h2>
-            <h3><%= @travel.departure_date.strftime("%d %B %Y") %>   <i class="fas fa-arrow-right m-3"></i>   <%= @travel.arrival_date.strftime("%d %B %Y") %></h3>
+            <h2><%= t("travels.show.summary") %></h2>
+            <h3><%= l(@travel.departure_date, format: :long) %>   <i class="fas fa-arrow-right m-3"></i>   <%= l(@travel.arrival_date, format: :long) %></h3>
             <hr style="margin: 0">
         </div>
         <div class="d-inline">
@@ -21,17 +21,17 @@
           </div>
         </div>
           <div>
-            <p>Complementary information</p>
+            <p><%= t("travels.show.complementary") %></p>
             <p><%= @travel.details %></p>
           </div>
         <hr style="margin: 0">
         <div class="card-travel-show-attributes">
-          <p><span>Price:</span> <%= @travel.price %> €</p>
-          <p><span>Arrival hour:</span> <%= @travel.arrival_hour %></p>
-          <p><span>Weight left:</span> <%= @travel.weight_left %>kg</p>
+          <p><span><%= t("travels.show.price") %>:</span> <%= @travel.price %> €</p>
+          <p><span><%= t("travels.show.arrival") %>:</span> <%= @travel.arrival_hour %></p>
+          <p><span><%= t("travels.show.weight") %>:</span> <%= @travel.weight_left %>kg</p>
         </div>
-        <%= link_to "Ask this liner", new_travel_booking_path(params["id"]), class:'btn-flat' unless current_user.travels.include?(@travel) %>
-        <%= link_to "Back to your travels", travels_path %>
+        <%= link_to t("travels.show.ask"), new_travel_booking_path(params["id"]), class:'btn-flat' unless current_user.travels.include?(@travel) %>
+        <%= link_to t("travels.show.back"), travels_path %>
       </div>
     </div>
 </div>

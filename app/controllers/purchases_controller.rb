@@ -25,7 +25,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
     @purchase.user = @user
     if @purchase.save
-      redirect_to mypurchase_path(@purchase)
+      redirect_to purchase_path(@purchase)
     else
       render :new
     end

@@ -36,10 +36,10 @@
       <div class="description">
         <h2><strong><%= purchase.name %></strong></h2>
         <h2><strong><%= purchase.seller %></strong></h2>
-        <p> Buy at <strong><%= purchase.purchase_place %></strong> </p>
+        <p> <%= t("purchases.index.buy") %> <strong><%= purchase.purchase_place %></strong> </p>
         <p>Url: <strong><%= purchase.product_url %></strong></p>
         <p class="read-more">
-          <a href=<%= "purchases/#{purchase.id}" %>>Read More</a>
+          <a href=<%= "purchases/#{purchase.id}" %>><%= t("purcahases.index.more") %></a>
         </p>
       </div>
     </div>

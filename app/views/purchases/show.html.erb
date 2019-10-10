@@ -3,22 +3,22 @@
      <div class="card-purchase-show-infos">
         <div class="card-purchase-show-description">
           <div class="book-purchase d-flex justify-content-center">
-            <h2>Summary</h2>
+            <h2><%= t("purchases.show.summary") %></h2>
           </div>
             <%= cl_image_tag @purchase.photo%>
             <p><%= current_user.first_name %> <%= current_user.last_name %></p>
-          <p><strong><span>price:</span> <%= @purchase.price %>€</strong></p>
-          <p><strong><span>Bonus traveler:</span> <%= @purchase.bonus_traveler %>€</strong></p>
+          <p><strong><span><%= t("purchases.show.price") %>: </span> <%= @purchase.price %>€</strong></p>
+          <p><strong><span><%= t("purchases.show.bonus") %>:</span> <%= @purchase.bonus_traveler %>€</strong></p>
         </div>
         <div class="card-purchase-show-attributes">
-         <p><span>Product name:</span> <%= @purchase.name %></p>
-         <p><span>Seller:</span> <%= @purchase.seller %></p>
-         <p><span>Country:</span> <%= @purchase.purchase_place %></p>
+         <p><span><%= t("purchases.show.name") %>:</span> <%= @purchase.name %></p>
+         <p><span><%= t("purchases.show.seller") %>:</span> <%= @purchase.seller %></p>
+         <p><span><%= t("purchases.show.country") %>:</span> <%= @purchase.purchase_place %></p>
         </div>
-        <%= link_to "Ask this liners", new_purchase_order_path(params["id"]), class:'btn btn-primary btn-book' unless current_user.purchases.include?(@purchase) %>
+        <%= link_to t("purchases.show.ask"), new_purchase_order_path(params["id"]), class:'btn btn-primary btn-book' unless current_user.purchases.include?(@purchase) %>
       </div>
     </div>
     <div class="d-flex justify-content-center">
-      <%= link_to "Back to your purchases", purchases_path %>
+      <%= link_to t("purchases.show.back"), purchases_path %>
     </div>
 
