@@ -1,6 +1,10 @@
 Rails.application.configure do
-  config.web_socket_server_url = "wss://line-jauresko.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://line-jauresko.herokuapp.com', 'http://line-jauresko.herokuapp.com']
+  config.web_socket_server_url = "wss://liine.io/cable"
+  config.action_cable.allowed_request_origins = ['https://liine.io', 'http://liine.io']
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "liine.io" }
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

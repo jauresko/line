@@ -93,4 +93,11 @@ fr:
       weight: "Poids restant"
       back: "Retour"
       ask: "Contacter ce liner"
-
+  booking:
+    congrat: "Felicitation vous venez juste de reservé un voyage !"
+    complementary: "Information complementaire"
+    book: "Vous venez de reserver"
+    info: "Information sur la réservation"
+    contact: "Contacter ce liiner"
+  order:
+    congrat: "Félicitations vous avez bien lancé votre commande"

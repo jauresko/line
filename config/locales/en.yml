@@ -93,5 +93,12 @@ en:
       weight: "Weight left"
       back: "Back"
       ask: "Book this liner"
-
+  booking:
+    congrat: "Congratulation your just connect with a liner"
+    complementary: "Complementary information"
+    book: "You just book"
+    info: "Information on your booking"
+    contact: "Contact this liiner"
+  order:
+    congrat: "Congrats you succesfully launch your order"
 

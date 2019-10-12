@@ -2,7 +2,7 @@
    <div class="card-travel-show col-xl-10 col-lg-10 col-md-12 col-sm-12 d-flex justify-content-center text-align-center">
      <div class="card-travel-show-infos">
         <div class="card-travel-show-description">
-            <h2>Congratulation your just connect with a liner</h2>
+            <h2><%= t("booking.congrat") %></h2>
               <p><%= @booking.travel.user.first_name %> <%= @booking.travel.user.last_name %></p>
               <%= image_tag "success.svg", class: "m-3"%>
             <h3><%= l(@booking.date, format: :long)%></h3>
@@ -10,15 +10,15 @@
         </div>
         <hr style="margin: 0">
           <div>
-            <p>Complementary information</p>
+            <p><%= t("booking.complementary") %></p>
             <p><%= @booking.travel.details %></p>
           </div>
           <div>
-            <p>You just book <span><%= @booking.weight %></span> kg</p>
-            <p>Information on your booking</p>
+            <p><%= t("booking.book") %> <span><%= @booking.weight %></span> kg</p>
+            <p><%= t("booking.info") %></p>
             <p><span><%= @booking.description %></span></p>
           </div>
-          <p><%=link_to "contact this liner", travel_booking_chat_room_path(@booking.travel, @booking) %></p>
+          <p><%=link_to t("booking.contact"), travel_booking_chat_room_path(@booking.travel, @booking) %></p>
         </div>
       </div>
     </div>
