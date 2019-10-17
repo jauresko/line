@@ -18,6 +18,7 @@ gem 'devise'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
 gem 'rails-i18n'
+gem 'sendgrid-ruby'
 
 
 group :development do
