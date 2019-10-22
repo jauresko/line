@@ -1,9 +1,9 @@
 ActionMailer::Base.smtp_settings = {
-  address: 'smtp.sendgrid.net',
+  address: "smtp.gmail.com",
   port: 587,
-  user_name: ENV['SENDGRID_ADDRESS'],
-  password: ENV['SENDGRID_APP_PASSWORD'],
-  domain: 'service@liine.io',
-  authentication: :plain,
+  domain: 'gmail.com',
+  user_name: ENV['GMAIL_ADDRESS'],
+  password: ENV['GMAIL_APP_PASSWORD'],
+  authentication: :login,
   enable_starttls_auto: true
 }

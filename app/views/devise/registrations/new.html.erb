@@ -28,8 +28,8 @@
               <%= f.input :password_confirmation,
                           required: true,
                           input_html: { autocomplete: "new-password" } %>
-              <%= f.input :photo, label: '📷 Upload a photo below' %>
-              <%= f.input :document, label: '📷 Upload your I.D below' %>
+              <%= f.input :photo, class: 'upload-photo' ,label: '📷 Upload a photo below' %>
+              <%= f.input :document, class: 'upload-photo',label: '📷 Upload your I.D below' %>
               <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
               <%= f.button :submit, "Sign up", { class:"text-white btn-flat" } %>
             </div>
