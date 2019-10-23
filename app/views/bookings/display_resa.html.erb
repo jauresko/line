@@ -20,7 +20,7 @@
 
     <div class="notification-actions d-flex flex-column">
       <% if booking.status != "Delivered" %>
-        <%= link_to travel_booking_path(booking.travel, booking, class:"mb-2",booking: { status: "Delivered"}), method: :patch, data: { confirm: "Are you sure?" } do %>Deliver
+        <%= link_to travel_booking_path(booking.travel, booking, booking: { status: "Delivered"}), method: :patch, data: { confirm: "Are you sure?" } do %>Deliver
           <i class="fas fa-check"></i>
         <% end %>
       <% else %>
