@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'service@liine.io'
+  default from: 'jaures.kouassi.pro@gmail.com'
   layout 'mailer'
 end
