@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'event/stripe_callback'
+  get 'event/payment_profile'
   devise_for :users
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
