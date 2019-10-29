@@ -16,11 +16,12 @@ class BookingsController < ApplicationController
     @travel = Travel.find(params[:travel_id])
     @booking = Booking.new(booking_params)
     if @booking.weight <= @travel.weight_left
-      @booking.total_price = @travel.price
+      @booking.total_price = (@travel.price * @booking.weight)/(@travel.weight_left)
       @booking.date = @travel.arrival_date
       @booking.user_id = @user.id
       @booking.travel_id = @travel.id
       if @booking.save
+        @travel.price = @travel.price - @booking.total_price
         @travel.weight_left = @travel.weight_left - @booking.weight
         @travel.save
         @chat_room = ChatRoom.create(booking_id: @booking.id)

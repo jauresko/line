@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_232001) do
+ActiveRecord::Schema.define(version: 2019_10_29_011646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,9 +36,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_232001) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "booking_id"
-    t.bigint "order_id"
     t.index ["booking_id"], name: "index_chat_rooms_on_booking_id"
-    t.index ["order_id"], name: "index_chat_rooms_on_order_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -52,47 +50,13 @@ ActiveRecord::Schema.define(version: 2019_09_12_232001) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.date "date"
-    t.integer "total_price"
-    t.string "status", default: "Pending"
-    t.bigint "user_id"
-    t.bigint "purchase_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "review_order_id"
-    t.index ["purchase_id"], name: "index_orders_on_purchase_id"
-    t.index ["review_order_id"], name: "index_orders_on_review_order_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
-  create_table "purchases", force: :cascade do |t|
-    t.string "product_url"
-    t.string "name"
-    t.string "photo"
-    t.string "purchase_place"
-    t.string "seller"
-    t.integer "price"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "bonus_traveler"
-    t.string "status", default: "Pending"
-    t.index ["user_id"], name: "index_purchases_on_user_id"
-  end
-
-  create_table "review_orders", force: :cascade do |t|
-    t.integer "rating"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "travels", force: :cascade do |t|
@@ -130,6 +94,9 @@ ActiveRecord::Schema.define(version: 2019_09_12_232001) do
     t.string "telephone"
     t.string "whatsapp_number"
     t.string "document"
+    t.integer "sum_rating"
+    t.integer "average_rating"
+    t.integer "deliveries"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -138,12 +105,8 @@ ActiveRecord::Schema.define(version: 2019_09_12_232001) do
   add_foreign_key "bookings", "travels"
   add_foreign_key "bookings", "users"
   add_foreign_key "chat_rooms", "bookings"
-  add_foreign_key "chat_rooms", "orders"
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "orders", "purchases"
-  add_foreign_key "orders", "review_orders"
-  add_foreign_key "orders", "users"
-  add_foreign_key "purchases", "users"
+  add_foreign_key "reviews", "users"
   add_foreign_key "travels", "users"
 end

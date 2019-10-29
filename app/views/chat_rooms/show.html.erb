@@ -1,6 +1,5 @@
 
     <div class = "col-xl-12 col-lg-12 col-sm-12 col-sm-offset-3 col-12 col-xs-12" id="chatroom-box">
-      <% if @booking %>
         <div class = "chat-header">
           <%= link_to root_path, class:"text-white" do %>
             <i class="fas fa-arrow-left"></i>
@@ -20,20 +19,6 @@
 
         </div>
       </div>
-      <% elsif @order %>
-        <div class = "chat-header"> <h4><%= @order.user == current_user ? @order.purchase.user.first_name : @order.user.first_name %></h4></div>
-        <div id=<%= @chat_room.id %> class ="messages">
-          <% @chat_room.messages.each do |message| %>
-            <%= render "shared/messages", message: message, user_is_messages_author: message.user == current_user %>
-          <% end %>
-        </div>
-        <div id= "create-message">
-          <%= simple_form_for :message, url: purchase_order_chat_room_messages_path(@order.purchase, @order, @chat_room), class:"text-field", method: :post,remote: true do |f| %>
-            <%= f.input :content, label: false %>
-          <% end %>
-        </div>
-      </div>
-      <% end %>
 <% content_for :after_js do %>
 <script>
   App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create(

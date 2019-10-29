@@ -8,6 +8,5 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :address, :nationality, :telephone, :whatsapp_number, presence: true
   has_many :travels
   has_many :bookings
-  has_many :purchases
-  has_many :orders
+  has_many :reviews
 end

@@ -7,9 +7,7 @@ en:
     order: "Order with us"
     travel: "Monetize your travel"
     profil: "Profil"
-    purchases: "My purchases"
     travels: "My travels"
-    orders: "My orders"
     bookings: "My deliveries"
     log_out: "Log out"
     sign_up: "Sign up"
@@ -30,39 +28,7 @@ en:
     how_send_2: "2 - Find a traveler"
     how_send_3: "3 - Meet and check the package"
     how_send_4: "4 - Travel safely with the package"
-    how_send_5: "5 - Bring it the recipient and get your money"
-    how_buy_1: "1 - Make an order"
-    how_buy_2: "2 - Ask to the line community to buy it"
-    how_buy_3: "3 - The money plus his bonus is already lock !"
-    how_buy_4: "4 - he purchase the product"
-    how_buy_5: "5 - Travel safely with the package"
-    how_buy_6: "6 - Bring it to you and get the money"
-  purchases:
-    index:
-      search: "Search"
-      departure: "Departure"
-      arrival: "Arrival"
-      order: "Find an order"
-      buy: "Buy at"
-      more: "Read more"
-    new:
-      order: "Make an order with us"
-      url: "Product url"
-      name: "Product name"
-      seller: "Seller"
-      place: "Place to purchase"
-      price: "Price"
-      bonus: "Traveler bonus"
-      upload: "📷 Upload a photo"
-    show:
-      summary: "Summary"
-      price: "Price"
-      bonus: "Bonus traveler"
-      name: "Product name"
-      seller: "Seller"
-      country: "Country"
-      back: "Back"
-      ask: "Contact this liner"
+    how_send_5: "5 - Bring it to the recipient and get your money"
   travels:
     index:
       travel: "Find a transporter"
@@ -99,6 +65,4 @@ en:
     book: "You just book"
     info: "Information on your booking"
     contact: "Contact this liiner"
-  order:
-    congrat: "Congrats you succesfully launch your order"
 

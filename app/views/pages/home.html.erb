@@ -6,7 +6,7 @@
         <p><%= t("home.description") %></p>
         <p><%= t("home.under_description") %></p>
         <div class ="d-flex justify-content-center">
-          <%= link_to t("home.btn_order"), purchases_path, class: "btn btn-flat-2 m-3" %>  <%= link_to t("home.btn_send"), travels_path, class: "btn btn-flat m-3" %>
+          <%= link_to t("home.btn_send"), travels_path, class: "btn btn-flat m-3" %>
         </div>
       </div>
     </div>
@@ -14,10 +14,7 @@
 
     <div class="container text-center pagination-center mb-3">
       <h2><strong><%= t("home.how_it_works") %></strong></h2>
-      <a class="border-bottom border-primary mr-5" id="sender-display"><strong><%= t("home.send") %></strong></a>
-      <a class="border-bottom border-primary ml-5" id="buy-display"><strong><%= t("home.buy") %></strong></a>
     </div>
-
 
   <div class="container text-center pagination-center" id = "send-path">
     <div class="row d-flex justify-content-center">
@@ -32,25 +29,6 @@
           <p><%= t("home.how_send_4") %></p>
           <p><%= t("home.how_send_5") %></p>
           <%= link_to t("home.btn_send"), travels_path, class: "btn btn-flat m-3" %>
-        </main>
-      </div>
-    </div>
-  </div>
-
-  <div class="container text-center pagination-center" id = "buy-path">
-    <div class="row d-flex justify-content-center">
-      <div class="app rounded col-md-12 col-lg-12 col-sm-8 col-xs-8 col-10 mb-5">
-        <header>
-        </header>
-        <main>
-          <h2><strong><%= t("home.how_buy") %></strong></h2>
-          <p><%= t("home.how_buy_1") %></p>
-          <p><%= t("home.how_buy_2") %></p>
-          <p><%= t("home.how_buy_3") %></p>
-          <p><%= t("home.how_buy_4") %></p>
-          <p><%= t("home.how_buy_5") %></p>
-          <p><%= t("home.how_buy_6") %></p>
-          <%= link_to t("home.buy_now"), purchases_path, class: "btn btn-flat-2 m-3" %>
         </main>
       </div>
     </div>

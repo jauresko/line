@@ -35,7 +35,7 @@
     <div class="description-2">
       <h2><strong><%= travel.user.last_name %></strong></h2>
       <h2><%= t("travels.index.departure") %> <strong><%= travel.departure_place %></strong> <%= t("travels.index.to") %> <strong><%= travel.arrival_place %></strong></h2>
-      <p> <%= t("travels.index.arrival_at") %> <strong><%= travel.arrival_hour %></strong></p>
+      <p> <%= t("travels.index.arrival_at") %> <strong><%= travel.arrival_hour.strftime("%H h %M") %></strong></p>
       <p><%= t("travels.index.weight") %>: <strong><%= travel.weight_left %></strong></p>
       <p><%= t("travels.index.price") %>: <strong><%= travel.price %></strong> €</p>
       <p class="read-more-2">
