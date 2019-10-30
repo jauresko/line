@@ -1,30 +1,68 @@
-.card-profile {
-  height: 100%;
-  width: 100%;
+.profile {
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
   color: white;
-  font-size: 20px
 }
 
-.avatar-profile {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
 }
 
-.card-container {
-  height: 60%;
-  border-color: $line2;
-  background-color: $line;
-  border-radius: 3%
+.profile-userbuttons a {
+  color: white;
 }
 
-.pencil-color {
-  color: $line2
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
 }
 
-.pencil-position {
-  position: relative;
-  left: 138px;
-  bottom: 40px
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
 }

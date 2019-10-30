@@ -17,35 +17,44 @@
 <% end %>
 </div>
 
-
-<% @travels.each do |travel| %>
-<% if travel.user == current_user %>
-<% else %>
-<% if travel.user.photo.file.nil? %>
-<div class="blog-card-2">
-    <div class="meta">
-      <%= image_tag "user.png", height: 300, width: 300, crop: :fill, class:"photo" %>
+<% if @travels != [] %>
+  <% @travels.each do |travel| %>
+  <% if travel.user == current_user || travel.weight_left == 0 %>
+  <% else %>
+  <% if travel.user.photo.file.nil? %>
+  <div class="blog-card-2">
+      <div class="meta">
+        <%= image_tag "user.png", height: 300, width: 300, crop: :fill, class:"photo" %>
+        </div>
+  <% else %>
+  <div class="blog-card-2">
+      <div class="meta p-5">
+        <%= cl_image_tag travel.user.photo, height: 300, width: 300, crop: :fill, class:"photo"%>
       </div>
+  <% end %>
+      <div class="description-2">
+        <h2><strong><%= travel.user.last_name %></strong></h2>
+        <h2><%= t("travels.index.departure") %> <strong><%= travel.departure_place %></strong> <%= t("travels.index.to") %> <strong><%= travel.arrival_place %></strong></h2>
+        <p> <%= t("travels.index.arrival_at") %> <strong><%= travel.arrival_hour.strftime("%H h %M") %></strong></p>
+        <p><%= t("travels.index.weight") %>: <strong><%= travel.weight_left %></strong></p>
+        <p><%= t("travels.index.price") %>: <strong><%= travel.price %></strong> €</p>
+        <p class="read-more-2">
+          <a href=<%= "travels/#{travel.id}" %>><%= t("travels.index.more") %></a>
+        </p>
+        <% unless travel.user.document.file.nil? %>
+          <i class="fas fa-user-check"></i>
+        <% end %>
+      </div>
+    </div>
+    </div>
+  <% end %>
+  <% end %>
 <% else %>
-<div class="blog-card-2">
-    <div class="meta p-5">
-      <%= cl_image_tag travel.user.photo, height: 300, width: 300, crop: :fill, class:"photo"%>
-    </div>
-<% end %>
-    <div class="description-2">
-      <h2><strong><%= travel.user.last_name %></strong></h2>
-      <h2><%= t("travels.index.departure") %> <strong><%= travel.departure_place %></strong> <%= t("travels.index.to") %> <strong><%= travel.arrival_place %></strong></h2>
-      <p> <%= t("travels.index.arrival_at") %> <strong><%= travel.arrival_hour.strftime("%H h %M") %></strong></p>
-      <p><%= t("travels.index.weight") %>: <strong><%= travel.weight_left %></strong></p>
-      <p><%= t("travels.index.price") %>: <strong><%= travel.price %></strong> €</p>
-      <p class="read-more-2">
-        <a href=<%= "travels/#{travel.id}" %>><%= t("travels.index.more") %></a>
-      </p>
-      <% unless travel.user.document.file.nil? %>
-        <i class="fas fa-user-check"></i>
-      <% end %>
-    </div>
-  </div>
+  <p class="text-align-center mt-5"><%= t("travels.index.sorry") %></p>
+  <p class="text-align-center"><%= t("travels.index.help") %></p>
+  <div class ="text-align-center">
+    <div class="fb-share-button text-align-center" data-href="http://liine.io" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fliine.io%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
   </div>
 <% end %>
-<% end %>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v5.0"></script>
