@@ -1,7 +1,7 @@
 en:
-  profil: "Verify your account by uploading your I.D to be trust by the community"
+  profil: "Verify your account by uploading your I.D to be trusted by the community"
   footer:
-    title: "Here you can send and purchase your package everywhere."
+    title: "Here you can send and receive your package everywhere."
     terms: "Terms"
     contact: "Contact"
   navbar:
@@ -43,7 +43,7 @@ en:
       weight: "Weight left"
       more: "Read more"
       sorry: "They are no travel yet to this destination"
-      help: " Aidez nous à agrandir notre communauté"
+      help: " Help us to grow our community"
     new:
       travel: "Travel with us"
       departure: "Departure date"
@@ -63,9 +63,9 @@ en:
       back: "Back"
       ask: "Book this liner"
   booking:
-    congrat: "Congratulation your just connect with a liner"
+    congrat: "Congratulation you just connected with a liiner"
     complementary: "Complementary information"
-    book: "You just book"
+    book: "You just booked"
     info: "Information on your booking"
     contact: "Contact this liiner"
 

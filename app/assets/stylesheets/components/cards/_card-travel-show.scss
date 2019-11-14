@@ -26,17 +26,11 @@
   p{
     font-size: 1.1rem;
   }
-  img {
-    object-fit: cover;
-    width: 7vw;
-  }
 }
 .text-center {
   text-align: center;
 }
-.card-travel-show-description span {
-  color:$line;
-}
+
 .btn-book {
   margin-top: 1rem;
 }
@@ -46,3 +40,15 @@
     margin-bottom: 1rem;
   }
 }
+
+img {
+  object-fit: cover;
+  width: 7vw;
+}
+
+.align-date-show {
+  z-index: 100;
+  position: relative;
+  bottom: 40px;
+}
+
