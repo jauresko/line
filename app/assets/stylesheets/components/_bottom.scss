@@ -1,7 +1,7 @@
 .btn-flat {
-  color: white;
+  color: black;
   padding: 8px 24px;
-  border-radius: 25px;
+  border-radius: 10px;
   background: $line;
   transition: background 0.3s ease;
   border: none;
@@ -15,8 +15,8 @@
 .btn-flat-2 {
   color: white;
   padding: 8px 24px;
-  border-radius: 25px;
-  background: $line2;
+  border-radius: 10px;
+  background: black;
   transition: background 0.3s ease;
   border: none;
 }

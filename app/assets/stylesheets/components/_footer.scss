@@ -35,3 +35,14 @@
 // .page {
 //   min-height: 100vh;
 // }
+.footer-row {
+  flex-direction: row;
+}
+
+.footer-container {
+  height: 100px;
+}
+
+.footer-column {
+  flex-direction: column;
+}

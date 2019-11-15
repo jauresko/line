@@ -19,7 +19,8 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'jaures.kouassi.pro@gmail.com'
-
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], {}
+  config.omniauth :facebook, ENV['FB_CLIENT_ID'], ENV["FB_APP_SECRET"], info_fields: 'email, first_name, last_name, image, birthday, address', callback_url: "http://localhost:3000/users/auth/facebook/callback"
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
