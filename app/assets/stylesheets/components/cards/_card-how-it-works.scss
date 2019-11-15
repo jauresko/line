@@ -172,3 +172,62 @@ html {
     min-width: var(--main-column-width);
   }
 }
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 280px;
+  width: 100%;
+  background-color: $line;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 24px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.float {
+  animation: float 1s ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-5px);
+  }
+  100% {
+    transform: translatey(-0px);
+  }
+}
+
+.card-category p {
+  font-size: 18px;
+}
+
+.icone-who img {
+  position: relative;
+  top: 7px;
+  right: 5px;
+}
+
+.card-size {
+  height: 300px !important;
+}
+
+.checks {
+  display: inline-flex;
+}
+
+.checks p {
+  font-size: 22px;
+  margin: 10px;
+}
+
+.checks i {
+  color: $line;
+}
