@@ -1,7 +1,18 @@
-<div class="text-center">
+<div class="text-center d-flex justify-content-center h-50">
     <div class="d-flex justify-content-center">
-      <div class="align-items-center ">
-        <%= render "devise/shared/links" %>
+      <div>
+        <div class="text-center icon-size">
+          <%= link_to user_facebook_omniauth_authorize_path do %>
+            <i style="color:  #3b5998;" class="fab fa-facebook"></i>
+            <p><%= t("navbar.signf") %></p>
+          <% end %>
+        </div>
+        <div class="text-center icon-size">
+          <%= link_to user_google_oauth2_omniauth_authorize_path do%>
+            <i style="color: #DB4437" class="fab fa-google"></i>
+            <p><%= t("navbar.signg") %></p>
+          <% end %>
+        </div>
       </div>
     </div>
 </div>

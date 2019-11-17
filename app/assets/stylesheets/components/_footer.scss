@@ -41,8 +41,24 @@
 
 .footer-container {
   height: 100px;
+  margin-bottom: 100px;
+  margin-top: 70px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0
 }
 
 .footer-column {
   flex-direction: column;
+}
+
+.footer-column a {
+  font-size: 25px;
+  color: black;
+}
+
+.footer-column i {
+  font-size: 40px;
+  color: black;
 }

@@ -17,8 +17,10 @@
 
 body {
   height: 100vh;
-  background-color: white
+  position: relative;
+  background-color: white;
 }
+
 .line {
   height: 100vh;
 }
@@ -33,4 +35,12 @@ body {
 
 .page-line {
   min-height: 100%
+}
+
+.icon-size i {
+  font-size: 50px;
+}
+
+.icon-size p {
+  color: black;
 }

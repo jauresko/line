@@ -5,6 +5,8 @@ en:
     terms: "Terms"
     contact: "Contact"
   navbar:
+    signf: "Sign in with facebook"
+    signg: "Sign in with google"
     order: "Order with us"
     travel: "Monetize your travel"
     profil: "Profil"
