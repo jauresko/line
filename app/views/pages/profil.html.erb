@@ -3,14 +3,11 @@
 		<div class="col-md-3">
 			<div class="profile-sidebar">
 				<div class="profile-userpic">
-          <%= cl_image_tag current_user.photo, height:100, width: 100, class:"img-responsive" %>
+          <%= image_tag current_user.image, height:100, width: 100, class:"img-responsive" %>
 				</div>
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
 						<%= current_user.last_name.upcase %> <%= current_user.first_name.capitalize %>
-					</div>
-					<div class="profile-usertitle-job">
-						<%= current_user.nationality.capitalize %>
 					</div>
           <div class="profile-usertitle-job">
             <%= current_user.telephone %>
