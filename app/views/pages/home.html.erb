@@ -1,5 +1,6 @@
-<div class="container">
-  <div class="text-center pagination-center mt-5 mb-5 banner-p">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1558285549-2a06f9a5fe65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80);">
+  <div class="container">
+    <div class="text-center pagination-center mt-5 mb-5 banner-p">
     <h1 class="mb-3 "><strong><%= t("home.title") %></strong></h1>
     <p><%= t("home.description") %></p>
     <p><%= t("home.under_description") %></p>
@@ -12,75 +13,6 @@
       <p> <i class="fas fa-check"></i> <%= t('home.check3') %> </p>
     </div>
   </div>
-
-
-<div class="container text-center pagination-center mt-5 mb-5">
-  <h2><strong><%= t("home.who") %></strong></h2>
-</div>
-<div class="container">
-  <div class="row justify-content-center mb-3">
-
-    <div class="col-md-6 col-xs-6 mb-3">
-    <%= image_tag("group.png") %>
-      <div id="who-1" class="card-category">
-        <div class="mb-2">
-          <h3><strong><%= t("home.who1") %></strong></h3>
-        </div>
-        <div class="mb-2">
-          <p><%= t("home.subwho1") %></p>
-        </div>
-        <div class="mb-2">
-          <a href="#" class="btn-flat-2"><%= t("home.more") %> <i class="fas fa-chevron-right"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <div id="who-2" class="col-md-6 col-xs-6 mb-3 icone-who">
-    <%= image_tag("support.png") %>
-      <div class="card-category">
-        <div class="mb-2">
-          <h3><strong><%= t("home.who2") %></strong></h3>
-        </div>
-        <div class="mb-2">
-          <p><%= t("home.subwho2") %></p>
-        </div>
-        <div class="mb-2">
-          <a href="#" class="btn-flat-2"><%= t("home.more") %> <i class="fas fa-chevron-right"></i></a>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
-
-
-<div class="container text-center pagination-center mt-5">
-  <h2><strong><%= t("home.how_it_works") %></strong></h2>
-</div>
-
-<div class="container text-center pagination-center mb-5" id = "send-path">
-<div class="row d-flex justify-content-center">
-  <div class="app rounded col-md-12 col-lg-12 col-sm-8 col-xs-8 col-10 mb-5">
-    <header>
-    </header>
-    <main>
-      <h2><strong><%= t("home.how_send") %></strong></h2>
-      <p><%= t("home.how_send_1") %></p>
-      <p><%= t("home.how_send_2") %></p>
-      <p><%= t("home.how_send_3") %></p>
-      <p><%= t("home.how_send_4") %></p>
-      <p><%= t("home.how_send_5") %></p>
-      <%= link_to t("home.btn_send"), travels_path, class: "btn btn-flat m-3" %>
-    </main>
-  </div>
-</div>
-</div>
-
-<script>
-
-  window.intercomSettings = {
-    app_id: "aeo0xbiy"
-  };
-</script>
-
-<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/aeo0xbiy';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
 
