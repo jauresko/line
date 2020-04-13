@@ -5,6 +5,10 @@ fr:
     terms: "Conditions générales"
     contact: "Contact"
   navbar:
+    signupliine: "S'inscrire avec nous"
+    logliine: "Se connecter avec nous"
+    signf: "Se connecter avec facebook"
+    signg: "Se connecter avec google"
     order: "Commandez maintenant"
     travel: "Rentabilisez vos voyages"
     profil: "Profil"
@@ -14,6 +18,10 @@ fr:
     sign_up: "S'inscrire"
     login: "Se connecter"
   home:
+    title: "Rejoignez la communauté et envoyez vos colis partout"
+    check1: "Envoyez"
+    check2: "Transportez"
+    check3: "Rentabilisez"
     home: "Accueil"
     description: "Recevez et envoyez vos colis partout"
     under_description: "Faites-vous de l'argent en voyageant"
@@ -68,3 +76,7 @@ fr:
     book: "Vous venez de reserver"
     info: "Information sur la réservation"
     contact: "Contacter ce liiner"
+  edit:
+    personal_infos: "Informations personnelles"
+    password: "Changer votre mot de passe"
+    title: "Votre profil"

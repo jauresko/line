@@ -57,3 +57,45 @@
 #purchase_photo {
   visibility: hidden ;
 }
+
+
+.form-control {
+  border-radius: 25px;
+
+}
+
+.marge-edit {
+  margin: 50px;
+  width: 400px;
+  text-align: center
+}
+
+input.form-control:focus {
+  outline: none;
+  border: 2px solid $line !important;
+}
+
+.edit-form-liine {
+  display:flex;
+}
+
+@media screen and (max-width: 480px) {
+  .edit-form-liine {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .edit-form-liine {
+    display: block;
+    text-align: -webkit-center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .edit-form-liine {
+    display: block;
+  }
+}
+
+

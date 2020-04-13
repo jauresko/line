@@ -1,0 +1,141 @@
+.modal1 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 300; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0) !important; /* Fallback color */
+  background-color: rgba(0,0,0,0.4) !important; /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+.modal-content-1 {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 300; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0) !important; /* Fallback color */
+  background-color: rgba(0,0,0,0.4) !important; /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+.modal-content-2 {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close2 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal1 p {
+  color: black;
+}
+
+.modal2 p {
+  color: black;
+}
+
+
+.modal-fb {
+  padding: 5rem;
+  text-decoration: none;
+}
+
+.modal-fb i {
+  color:  #3b5998;
+}
+
+.modal-google {
+  padding: 5rem;
+  text-decoration: none;
+}
+
+.modal-google i {
+  color: #DB4437;
+}
+
+.modal-liine {
+  text-align: center;
+  padding: 5rem;
+  text-decoration: none;
+}
+
+.modal-liine img {
+  width: 125px;
+  padding-bottom: 12px;
+}
+
+
+
+@media screen and (max-width: 480px) {
+ .modal-line {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .modal-fb {
+  padding: 1rem;
+  text-decoration: none;
+  }
+
+  .modal-google {
+  padding: 1rem;
+  text-decoration: none;
+  }
+
+  .modal-liine {
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+  }
+
+
+
+}

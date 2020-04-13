@@ -5,6 +5,8 @@ en:
     terms: "Terms"
     contact: "Contact"
   navbar:
+    signupliine: "Sign up with us"
+    logliine: "Login with us"
     signf: "Sign in with facebook"
     signg: "Sign in with google"
     order: "Order with us"
@@ -80,4 +82,8 @@ en:
     book: "You just booked"
     info: "Information on your booking"
     contact: "Contact this liiner"
+  edit:
+    personal_infos: "Personal infos"
+    password: "Change your password"
+    title: "Your profil"
 

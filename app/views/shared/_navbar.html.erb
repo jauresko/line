@@ -16,17 +16,15 @@
         </li>
         <li class="nav-item active ml-2 mb-2 d-flex align-items-center">
           <div class="dropdown">
-            <button class="dropdown-toggle nounderline text-white" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Messages
-            </button>
+            <a href="" class="dropdown-toggle text-white" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Messages</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <% if user_signed_in? %>
                 <% current_user.bookings.each do |booking| %>
-                  <%= link_to "#{booking.travel.user.first_name}", travel_booking_chat_room_path(booking.travel, booking, booking.chat_room), class:"dropdown-item" %>
+                  <%= link_to "#{booking.travel.user.first_name} - #{booking.travel.arrival_date} ", travel_booking_chat_room_path(booking.travel, booking, booking.chat_room), class:"dropdown-item" %>
                 <% end %>
                 <% current_user.travels.each do |travel| %>
                   <% travel.bookings.each do |booking| %>
-                    <%= link_to "#{booking.user.first_name}", travel_booking_chat_room_path(booking.travel, booking, booking.chat_room), class:"dropdown-item" %>
+                    <%= link_to "#{booking.user.first_name} - #{booking.travel.arrival_date} ", travel_booking_chat_room_path(booking.travel, booking, booking.chat_room), class:"dropdown-item" %>
                   <% end %>
                 <% end %>
                 <% end %>
@@ -59,11 +57,11 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <% if user_signed_in? %>
                 <% current_user.bookings.each do |booking| %>
-                  <%= link_to "#{booking.travel.user.first_name}", travel_booking_chat_room_path(booking.travel, booking, booking.chat_room), class:"dropdown-item" %>
+                  <%= link_to "#{booking.travel.user.first_name} - #{booking.travel.arrival_date} ", travel_booking_chat_room_path(booking.travel, booking, booking.chat_room), class:"dropdown-item" %>
                 <% end %>
                 <% current_user.travels.each do |travel| %>
                   <% travel.bookings.each do |booking| %>
-                    <%= link_to "#{booking.user.first_name}", travel_booking_chat_room_path(booking.travel, booking, booking.chat_room), class:"dropdown-item" %>
+                    <%= link_to "#{booking.travel.user.first_name} - #{booking.travel.arrival_date} ", travel_booking_chat_room_path(booking.travel, booking, booking.chat_room), class:"dropdown-item" %>
                   <% end %>
                 <% end %>
                 <% end %>
@@ -89,44 +87,63 @@
           <%= link_to t("navbar.travel"), new_travel_path, class: "nav-link btn-flat text-white col-xs-6" %>
         </li>
         <li class="nav-item">
-          <%= link_to t("navabar.sign_up"),  root_path, :id => 'login', "data-toggle" => "modal", 'data-target' => '#sign_up', class:"nav-link" %>
+          <a class="nav-link" id="btn-signup"><%= t("navbar.sign_up") %></a>
         </li>
         <li class="nav-item">
-          <%= link_to t("navabar.login"),  root_path, :id => 'login', "data-toggle" => "modal", 'data-target' => '#sign_up', class:"nav-link" %>
+          <a class="nav-link" id="btn-login"><%= t("navbar.login") %></a>
         </li>
       <% end %>
     </ul>
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="sign_up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<div id="modal1" class="modal1">
+  <div class="modal-content-1">
+    <span class="close">&times;</span>
+    <div class="modal-body modal-line d-flex justify-content-center">
+      <div class="text-center modal-fb">
+        <%= link_to user_facebook_omniauth_authorize_path do %>
+          <i class="fab fa-facebook-square fa-4x"></i>
+          <p><%= t("navbar.signf") %></p>
+        <% end %>
       </div>
-      <div class="modal-body modal-line">
-        <div class="text-center">
-          <%= link_to user_facebook_omniauth_authorize_path do %>
-            <i style="color:  #3b5998;" class="fab fa-facebook"></i>
-            <p><%= t("navbar.signf") %></p>
-          <% end %>
-        </div>
-        <div class="text-center">
-          <%= link_to user_google_oauth2_omniauth_authorize_path do%>
-            <i style="color: #DB4437" class="fab fa-google"></i>
-            <p><%= t("navbar.signg") %></p>
-          <% end %>
-        </div>
-        <div>
-          <%= link_to new_user_registration_path do %>
-            <%= image_tag('Line.png', width: 100) %>
-            <p>Sign up with liine</p>
-          <% end %>
-        </div>
+      <div class="text-center modal-google">
+        <%= link_to user_google_oauth2_omniauth_authorize_path do%>
+          <i class="fab fa-google fa-4x"></i>
+          <p><%= t("navbar.signg") %></p>
+        <% end %>
+      </div>
+      <div class="modal-liine">
+        <%= link_to new_user_registration_path do %>
+          <%= image_tag('Line.png') %>
+          <p><%= t("navbar.signupliine") %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modal2" class="modal2">
+  <div class="modal-content-2">
+    <span class="close2">&times;</span>
+    <div class="modal-body modal-line d-flex justify-content-center">
+      <div class="text-center modal-fb">
+        <%= link_to user_facebook_omniauth_authorize_path do %>
+          <i class="fab fa-facebook-square fa-4x"></i>
+          <p><%= t("navbar.signf") %></p>
+        <% end %>
+      </div>
+      <div class="text-center modal-google">
+        <%= link_to user_google_oauth2_omniauth_authorize_path do%>
+          <i class="fab fa-google fa-4x"></i>
+          <p><%= t("navbar.signg") %></p>
+        <% end %>
+      </div>
+      <div class="modal-liine">
+        <%= link_to new_user_session_path do %>
+          <%= image_tag('Line.png') %>
+          <p><%= t("navbar.logliine") %></p>
+        <% end %>
       </div>
     </div>
   </div>
