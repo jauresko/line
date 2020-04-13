@@ -4,6 +4,5 @@ ActionMailer::Base.smtp_settings = {
   domain: 'liine.io',
   user_name: ENV['SENDGRID_USERNAME'],
   password: ENV['SENDGRID_PASSWORD'],
-  authentication: :login,
-  enable_starttls_auto: true
+  authentication: :login
 }
