@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  after_create :send_welcome_email
+
   mount_uploader :photo, PhotoUploader
   mount_uploader :document, PhotoUploader
   # Include default devise modules. Others available are:
@@ -8,7 +10,7 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
   # validates :first_name, :last_name, :address, :nationality, :telephone, :whatsapp_number, presence: true
   has_many :travels
-  has_many :bookings
+  has_many :bookings, dependent: :delete_all
   has_many :reviews
 
   def self.new_with_session(params, session)
@@ -31,4 +33,10 @@ class User < ApplicationRecord
       user.save# assuming the user model has an image
     end
   end
+
+  private
+
+    def send_welcome_email
+      UserMailer.with(user: self).welcome.deliver_now
+    end
 end
